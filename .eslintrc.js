@@ -13,4 +13,8 @@ module.exports = {
       jsx: true,
     },
   },
+  rules: {
+    'no-console': 'off',
+    'no-ternary': 'off',
+  },
 };
