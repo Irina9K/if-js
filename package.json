@@ -5,8 +5,8 @@
   "main": "main.js",
   "scripts": {
     "prettier": "prettier --write *.js",
-    "lint": "eslint --debug if-js/",
-    "lint:write": "eslint --debug if-js/ --fix"
+    "lint": "eslint --debug *.js",
+    "lint:write": "eslint --debug *.js --fix"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "eslint-plugin-jest": "^26.1.5",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
     "husky": "^7.0.4",
     "jest": "^28.0.3",
     "prettier": "2.6.2"
