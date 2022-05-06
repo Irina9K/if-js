@@ -6,7 +6,9 @@
   "scripts": {
     "prettier": "prettier --write *.js",
     "lint": "eslint --debug *.js",
-    "lint:write": "eslint --debug *.js --fix"
+    "lint:write": "eslint --debug *.js --fix",
+    "prepeare": "husky install",
+    "lint-husky": "prettier --write *.js && eslint --debug *.js"
   },
   "repository": {
     "type": "git",

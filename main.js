@@ -53,8 +53,7 @@ function palindrome(word) {
   const halfLengthWord = Math.floor(lengthWord / 2);
 
   for (let i = 0; i < halfLengthWord; i += 1) {
-
-    if (arrWord[i] === arrWord[lengthWord - (i += 1)]) {
+    if (arrWord[i] === arrWord[lengthWord - i - 1]) {
       console.log(true);
     } else {
       console.log(false);
@@ -67,13 +66,11 @@ palindrome('шалаш');
 console.log('function min(a, b)');
 
 function min1(a, b) {
-
   if (a < b) {
     console.log(a);
   } else {
     console.log(b);
   }
-
 }
 min1(15, 6);
 
@@ -86,13 +83,11 @@ min1(15, 6);
 console.log('function max(a, b)');
 
 function max1(a, b) {
-
   if (a > b) {
     console.log(a);
   } else {
     console.log(b);
   }
-
 }
 max1(15, 6);
 
@@ -105,7 +100,6 @@ max1(15, 6);
 
 function replacingElements(elements) {
   for (let i = 0; i < elements.length; i += 1) {
-
     if (elements[i] === 0) {
       console.log('zero');
     } else if (elements[i] % 100 === 0) {
@@ -115,7 +109,6 @@ function replacingElements(elements) {
     } else {
       console.log(elements[i]);
     }
-
   }
 }
 
