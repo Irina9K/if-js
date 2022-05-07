@@ -53,14 +53,14 @@ function palindrome(word) {
   const halfLengthWord = Math.floor(lengthWord / 2);
 
   for (let i = 0; i < halfLengthWord; i += 1) {
-    if (arrWord[i] === arrWord[lengthWord - i - 1]) {
-      console.log(true);
-    } else {
-      console.log(false);
+    if (arrWord[i] !== arrWord[lengthWord - i - 1]) {
+      return false;
     }
   }
+  return true;
 }
-palindrome('шалаш');
+
+console.log(palindrome('шалаш'));
 
 // function min(a, b)
 console.log('function min(a, b)');
@@ -124,3 +124,17 @@ for (let i = 0; i < 10; i += 1) {
 console.log('Converted array');
 
 replacingElements(elements);
+
+console.log('Generated array');
+
+// Functions - part 2
+
+console.log('The function returns the sum');
+
+function sum(a) {
+  return function arg(b) {
+    return a + b;
+  };
+}
+console.log(sum(5)(2));
+
