@@ -137,4 +137,3 @@ function sum(a) {
   };
 }
 console.log(sum(5)(2));
-
