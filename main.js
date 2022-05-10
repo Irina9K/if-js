@@ -137,3 +137,63 @@ function sum(a) {
   };
 }
 console.log(sum(5)(2));
+
+const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
+
+const element1 = document.getElementById('text1');
+const element2 = document.getElementById('text2');
+const element3 = document.getElementById('text3');
+
+element1.style.color = 'black';
+element2.style.color = 'black';
+element3.style.color = 'black';
+
+element1.onclick = function changeColor() {
+  for (let i = 0; i < colors.length; i += 1) {
+    if (this.style.color === 'black') {
+      this.style.color = colors[i];
+      return;
+    }
+    if (this.style.color === colors[colors.length - 1]) {
+      colors[0] = this.style.color;
+      return;
+    }
+    if (this.style.color === colors[i - 1]) {
+      this.style.color = colors[i];
+      return;
+    }
+  }
+};
+
+element2.onclick = function changeColor() {
+  for (let i = 0; i < colors.length; i += 1) {
+    if (this.style.color === 'black') {
+      this.style.color = colors[i];
+      return;
+    }
+    if (this.style.color === colors[colors.length - 1]) {
+      colors[0] = this.style.color;
+      return;
+    }
+    if (this.style.color === colors[i - 1]) {
+      this.style.color = colors[i];
+      return;
+    }
+  }
+};
+element3.onclick = function changeColor() {
+  for (let i = 0; i < colors.length; i += 1) {
+    if (this.style.color === 'black') {
+      this.style.color = colors[i];
+      return;
+    }
+    if (this.style.color === colors[colors.length - 1]) {
+      colors[0] = this.style.color;
+      return;
+    }
+    if (this.style.color === colors[i - 1]) {
+      this.style.color = colors[i];
+      return;
+    }
+  }
+};
