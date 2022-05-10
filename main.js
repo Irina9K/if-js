@@ -155,7 +155,7 @@ element1.onclick = function changeColor() {
       return;
     }
     if (this.style.color === colors[colors.length - 1]) {
-      colors[0] = this.style.color;
+      this.style.color = colors[i];
       return;
     }
     if (this.style.color === colors[i - 1]) {
@@ -172,7 +172,7 @@ element2.onclick = function changeColor() {
       return;
     }
     if (this.style.color === colors[colors.length - 1]) {
-      colors[0] = this.style.color;
+      this.style.color = colors[i];
       return;
     }
     if (this.style.color === colors[i - 1]) {
@@ -188,7 +188,7 @@ element3.onclick = function changeColor() {
       return;
     }
     if (this.style.color === colors[colors.length - 1]) {
-      colors[0] = this.style.color;
+      this.style.color = colors[i];
       return;
     }
     if (this.style.color === colors[i - 1]) {
