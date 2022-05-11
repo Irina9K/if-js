@@ -136,7 +136,9 @@ function sum(a) {
     return a + b;
   };
 }
+
 console.log(sum(5)(2));
+
 export { sum };
 
 const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
@@ -149,7 +151,7 @@ text1.style.color = 'black';
 text2.style.color = 'black';
 text3.style.color = 'black';
 
-text1.onclick = function changeColor() {
+function changeColor() {
   for (let i = 0; i < colors.length; i += 1) {
     if (this.style.color === 'black') {
       this.style.color = colors[i];
@@ -164,38 +166,10 @@ text1.onclick = function changeColor() {
       return;
     }
   }
-};
+}
 
-text2.onclick = function changeColor() {
-  for (let i = 0; i < colors.length; i += 1) {
-    if (this.style.color === 'black') {
-      this.style.color = colors[i];
-      return;
-    }
-    if (this.style.color === colors[colors.length - 1]) {
-      this.style.color = colors[i];
-      return;
-    }
-    if (this.style.color === colors[i - 1]) {
-      this.style.color = colors[i];
-      return;
-    }
-  }
-};
+text1.addEventListener('click', changeColor);
+text2.addEventListener('click', changeColor);
+text3.addEventListener('click', changeColor);
 
-text3.onclick = function changeColor() {
-  for (let i = 0; i < colors.length; i += 1) {
-    if (this.style.color === 'black') {
-      this.style.color = colors[i];
-      return;
-    }
-    if (this.style.color === colors[colors.length - 1]) {
-      this.style.color = colors[i];
-      return;
-    }
-    if (this.style.color === colors[i - 1]) {
-      this.style.color = colors[i];
-      return;
-    }
-  }
-};
+export { changeColor };
