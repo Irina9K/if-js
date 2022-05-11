@@ -137,18 +137,19 @@ function sum(a) {
   };
 }
 console.log(sum(5)(2));
+export { sum };
 
 const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
 
-const element1 = document.getElementById('text1');
-const element2 = document.getElementById('text2');
-const element3 = document.getElementById('text3');
+const text1 = document.getElementById('text1');
+const text2 = document.getElementById('text2');
+const text3 = document.getElementById('text3');
 
-element1.style.color = 'black';
-element2.style.color = 'black';
-element3.style.color = 'black';
+text1.style.color = 'black';
+text2.style.color = 'black';
+text3.style.color = 'black';
 
-element1.onclick = function changeColor() {
+text1.onclick = function changeColor() {
   for (let i = 0; i < colors.length; i += 1) {
     if (this.style.color === 'black') {
       this.style.color = colors[i];
@@ -165,7 +166,7 @@ element1.onclick = function changeColor() {
   }
 };
 
-element2.onclick = function changeColor() {
+text2.onclick = function changeColor() {
   for (let i = 0; i < colors.length; i += 1) {
     if (this.style.color === 'black') {
       this.style.color = colors[i];
@@ -181,7 +182,8 @@ element2.onclick = function changeColor() {
     }
   }
 };
-element3.onclick = function changeColor() {
+
+text3.onclick = function changeColor() {
   for (let i = 0; i < colors.length; i += 1) {
     if (this.style.color === 'black') {
       this.style.color = colors[i];
