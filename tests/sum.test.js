@@ -1,7 +1,7 @@
-import { sum, changeColor } from '../main.js';
+import { sum } from '../main.js';
 
 test('sum', () => {
-  expect(sum(1)(2)).toEqual(3);
+    expect(sum(1)(2)).toEqual(3);
 });
 
 test('checked click', () => {

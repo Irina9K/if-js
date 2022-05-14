@@ -140,36 +140,3 @@ function sum(a) {
 console.log(sum(5)(2));
 
 export { sum };
-
-const colors = ['magenta', 'cyan', 'firebrick', 'springgreen', 'skyblue'];
-
-const text1 = document.getElementById('text1');
-const text2 = document.getElementById('text2');
-const text3 = document.getElementById('text3');
-
-text1.style.color = 'black';
-text2.style.color = 'black';
-text3.style.color = 'black';
-
-function changeColor() {
-  for (let i = 0; i < colors.length; i += 1) {
-    if (this.style.color === 'black') {
-      this.style.color = colors[i];
-      return;
-    }
-    if (this.style.color === colors[colors.length - 1]) {
-      this.style.color = colors[i];
-      return;
-    }
-    if (this.style.color === colors[i - 1]) {
-      this.style.color = colors[i];
-      return;
-    }
-  }
-}
-
-text1.addEventListener('click', changeColor);
-text2.addEventListener('click', changeColor);
-text3.addEventListener('click', changeColor);
-
-export { changeColor };

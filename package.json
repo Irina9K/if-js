@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --env=jsdom",
     "prettier": "prettier --write *.js",
     "lint": "eslint --debug *.js",
     "lint:write": "eslint --debug *.js --fix",
@@ -38,6 +38,7 @@
     "eslint-plugin-react": "^7.29.4",
     "husky": "^7.0.4",
     "jest": "^28.1.0",
+    "jest-environment-jsdom": "^28.1.0",
     "prettier": "2.6.2"
   },
   "husky": {
