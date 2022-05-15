@@ -10,6 +10,7 @@ describe("check color", () => {
     const element2 = document.getElementById("text2");
     const element3 = document.getElementById("text3");
     const elementsArr = [element1, element2, element3];
+
     test("1 click color is magenta", async () => {
         for (let i = 0; i < elementsArr.length; i++) {
             elementsArr[i].click();
