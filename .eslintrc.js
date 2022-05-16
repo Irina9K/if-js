@@ -15,5 +15,8 @@ module.exports = {
   },
   rules: {
     'no-console': 'off',
+    'max-len': ['error', { ignoreComments: true }],
+    'import/prefer-default-export': 'off',
+    'no-param-reassign': 0,
   },
 };
