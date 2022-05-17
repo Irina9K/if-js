@@ -1,8 +1,7 @@
 function fixedData(data) {
   const arrData = data.split('-');
   const reverseData = arrData.reverse();
-  const nevDate = reverseData.join('.');
-  return nevDate;
+  return reverseData.join('.');
 }
 console.log(fixedData('2020-11-26'));
 
@@ -49,27 +48,16 @@ const data = [
   },
 ];
 
-// for (let i = 0; i < data.length; i += 1) {
-//   const countryStr = data[i].country;
-//   console.log(countryStr);
-//   console.log(countryStr.includes('Germany'));
-//   if(countryStr.includes(enterString)){
-//
-//   }
-// }
-
-function search() {
-  const enterString = prompt('Please enter country',);
+function searchName(enterString) {
+  const enterStringLower = enterString.toLowerCase();
   for (let i = 0; i < data.length; i += 1) {
-    const countryStr = data[i].country;
-    // console.log(countryStr);
-    const countryInclud = countryStr.includes(data[i].country)
-    // console.log(countryInclud);
-    if (countryStr.includes(enterString)) {
-      // console.log('yes');
-      console.log(data[i])
+    if (
+      enterStringLower === data[i].country.toLowerCase() ||
+      enterStringLower === data[i].city.toLowerCase()
+    ) {
+      console.log(data[i]);
     }
   }
 }
-search();
 
+searchName('Germany');

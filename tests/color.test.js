@@ -16,7 +16,6 @@ describe("check color", () => {
             elementsArr[i].click();
             changeColor(elementsArr[i]);
             const color = elementsArr[i].style.color;
-            console.log(color);
             expect(color).toBe("magenta");
         }
     });

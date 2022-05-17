@@ -18,5 +18,14 @@ module.exports = {
     'max-len': ['error', { ignoreComments: true }],
     'import/prefer-default-export': 'off',
     'no-param-reassign': 0,
+    'operator-linebreak': [
+      'error',
+      'after',
+      {
+        overrides: {
+          ':': 'before',
+        },
+      },
+    ],
   },
 };
