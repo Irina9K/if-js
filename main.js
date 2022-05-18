@@ -139,4 +139,4 @@ function sum(a) {
 
 console.log(sum(5)(2));
 
-export { sum };
+module.exports = sum;

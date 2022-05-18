@@ -51,10 +51,10 @@ const data = [
 function searchName(enterString) {
   const enterStringLower = enterString.toLowerCase();
   for (let i = 0; i < data.length; i += 1) {
-    if (
-      enterStringLower === data[i].country.toLowerCase() ||
-      enterStringLower === data[i].city.toLowerCase()
-    ) {
+    const hasCountry = enterStringLower === data[i].country.toLowerCase();
+    const hasCity = enterStringLower === data[i].city.toLowerCase();
+
+    if (hasCountry || hasCity) {
       console.log(data[i]);
     }
   }
