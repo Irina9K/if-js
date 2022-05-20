@@ -1,11 +1,7 @@
 // Task №5
 
 function palindrome(word) {
-  const wordCheck = word.split('').reverse().join('');
-  if (word === wordCheck) {
-    return true;
-  }
-  return false;
+  return word.split('').reverse().join('') === word;
 }
 
 console.log(palindrome('шалаш'));
@@ -181,6 +177,20 @@ searchCountry('Germany');
 
 const countryNew = hotels.map((item) => item.country); // get an array of countries
 const uniqCountry = Array.from(new Set(countryNew)); // get an array of unique countries
+// console.log(uniqCountry)
+// function selectionOfUniqueCountries() {
+//   for (let i = 0; i < uniqCountry.length; i += 1) {
+//     const result = hotels.reduce((newArr, item) => {
+//       if (item.country === uniqCountry[i]) {
+//         newArr.push(item.city);
+//       }
+//       return newArr;
+//     }, []);
+//   console.log((`${uniqCountry[i]}: ${result}`));
+//   }
+// }
+//
+// console.log(selectionOfUniqueCountries());
 
 function selectionOfUniqueCountries() {
   for (let i = 0; i < uniqCountry.length; i += 1) {
@@ -190,7 +200,10 @@ function selectionOfUniqueCountries() {
       }
       return newArr;
     }, []);
-    console.log(`${uniqCountry[i]}: ${result}`);
+    const obj = {};
+    const key = uniqCountry[i];
+    obj[key] = result;
+    console.log(obj);
   }
 }
 
