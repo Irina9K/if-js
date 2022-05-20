@@ -177,20 +177,6 @@ searchCountry('Germany');
 
 const countryNew = hotels.map((item) => item.country); // get an array of countries
 const uniqCountry = Array.from(new Set(countryNew)); // get an array of unique countries
-// console.log(uniqCountry)
-// function selectionOfUniqueCountries() {
-//   for (let i = 0; i < uniqCountry.length; i += 1) {
-//     const result = hotels.reduce((newArr, item) => {
-//       if (item.country === uniqCountry[i]) {
-//         newArr.push(item.city);
-//       }
-//       return newArr;
-//     }, []);
-//   console.log((`${uniqCountry[i]}: ${result}`));
-//   }
-// }
-//
-// console.log(selectionOfUniqueCountries());
 
 function selectionOfUniqueCountries() {
   for (let i = 0; i < uniqCountry.length; i += 1) {
