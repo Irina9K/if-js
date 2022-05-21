@@ -186,6 +186,7 @@ function selectionOfUniqueCountries() {
       }
       return newArr;
     }, []);
+    // console.log(result);
     const obj = {};
     const key = uniqCountry[i];
     obj[key] = result;
