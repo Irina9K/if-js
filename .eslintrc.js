@@ -15,7 +15,7 @@ module.exports = {
   },
   rules: {
     'no-console': 'off',
-    'max-len': ['error', { ignoreComments: true }],
+    'max-len': ['error', { ignoreComments: true, code: 120 }],
     'import/prefer-default-export': 'off',
     'no-param-reassign': 0,
     'operator-linebreak': [
