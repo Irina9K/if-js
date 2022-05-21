@@ -40,11 +40,10 @@ const deepEqual = (object1, object2) => {
   for (let i = 0; i < keys1.length; i += 1) {
     const key = keys1[i];
     const typeKey = typeof object1[key] === 'object' && typeof (object2[key] === 'object');
+    const isdeepEqualObj1 = !typeKey && object1[key] !== object2[key];
+    const isdeepEqualObj2 = typeKey && !deepEqual(object1[key], object2[key]);
 
-    if (
-      (!typeKey && object1[key] !== object2[key]) ||
-      (typeKey && !deepEqual(object1[key], object2[key]))
-    ) {
+    if (isdeepEqualObj1 || isdeepEqualObj2) {
       return false;
     }
   }
