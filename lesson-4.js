@@ -26,13 +26,3 @@ for (let i = 0; i < pArray.length; i += 1) {
 }
 
 module.exports = changeColor;
-
-// function sum(a) {
-//   return function arg(b) {
-//     return a + b;
-//   };
-// }
-//
-// console.log(sum(5)(2));
-//
-// module.exports = sum;
