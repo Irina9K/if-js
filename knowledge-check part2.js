@@ -1,0 +1,182 @@
+const roles = [
+  {
+    id: 'f7259abc-702a-4c26-99e4-ff596e7e3a4b',
+    name: 'admin',
+  },
+  {
+    id: '180e3ce7-ac3b-43a8-9c56-569a8c4493c8',
+    name: 'teacher',
+  },
+  {
+    id: '550a3276-c51f-465c-971f-ab4e34e9f02a',
+    name: 'student',
+  },
+];
+
+const users = [
+  {
+    id: '35172b2b-fb3d-4d8b-ac13-61351513dc5a',
+    userName: 'Nick',
+    email: 'nick@intellectfox.by',
+    role: 'teacher',
+    students: ['2e6667e8-0352-48f0-8d6d-e38bf30338a5', '649dc9a5-d788-49b6-bfc3-6716b97e66ad'],
+  },
+  {
+    id: '104acaf4-0255-4c02-bd71-9f68759a9d09',
+    userName: 'Andrew',
+    email: 'andrew@intellectfox.by',
+    role: 'Admin',
+  },
+  {
+    id: '9cf9e18f-2510-4011-90ef-ce690c4f7a66',
+    userName: 'Stas',
+    email: 'stas@intellectfox.by',
+    role: 'admin',
+  },
+  {
+    id: '3962c9f6-e152-4dbb-a6ac-6269879c942a',
+    userName: 'Mike',
+    email: 'mike@intellectfox.by',
+    role: 'Teacher',
+    students: ['dc4e0a6d-fb2f-40c2-a57e-11cea1d82d47', '0d337cf2-a172-4422-a4a1-716baf05cc0b'],
+  },
+  {
+    id: '6bed7b98-e40e-49ca-8826-fd1f8f0eaba6',
+    userName: 'Dan',
+    email: 'dan@intellectfox.by',
+    role: 'Teacher',
+    students: ['292bda95-3018-4ca1-bf73-67737efe1b25', '1730c5ac-e7ee-4f1a-b92a-2d59d23f78c2'],
+  },
+  {
+    id: '2e6667e8-0352-48f0-8d6d-e38bf30338a5',
+    userName: 'Charlie',
+    email: 'charlie@intellectfox.by',
+    role: 'student',
+    teachers: ['35172b2b-fb3d-4d8b-ac13-61351513dc5a', '2dfd5d40-0c21-4150-9b8c-58e52a146670'],
+  },
+  {
+    id: '649dc9a5-d788-49b6-bfc3-6716b97e66ad',
+    userName: 'Charlie',
+    email: 'charlie@intellectfox.by',
+    role: 'student',
+    teachers: ['35172b2b-fb3d-4d8b-ac13-61351513dc5a'],
+  },
+  {
+    id: 'dc4e0a6d-fb2f-40c2-a57e-11cea1d82d47',
+    userName: 'Rebecca',
+    email: 'rebecca@intellectfox.by',
+    role: 'STUDENT',
+    teachers: ['3962c9f6-e152-4dbb-a6ac-6269879c942a', '2dfd5d40-0c21-4150-9b8c-58e52a146670'],
+  },
+  {
+    id: '0d337cf2-a172-4422-a4a1-716baf05cc0b',
+    userName: 'Jessica',
+    email: 'jessica@intellectfox.by',
+    role: 'Student',
+    teachers: ['3962c9f6-e152-4dbb-a6ac-6269879c942a'],
+  },
+  {
+    id: '292bda95-3018-4ca1-bf73-67737efe1b25',
+    userName: 'Chris',
+    email: 'chris@intellectfox.by',
+    role: 'student',
+    teachers: ['6bed7b98-e40e-49ca-8826-fd1f8f0eaba6'],
+  },
+  {
+    id: '1730c5ac-e7ee-4f1a-b92a-2d59d23f78c2',
+    userName: 'Kevin',
+    email: 'kevin@intellectfox.by',
+    role: 'student',
+    teachers: ['6bed7b98-e40e-49ca-8826-fd1f8f0eaba6', '2dfd5d40-0c21-4150-9b8c-58e52a146670'],
+  },
+  {
+    id: '2dfd5d40-0c21-4150-9b8c-58e52a146670',
+    userName: 'Deborah',
+    email: 'deborah@intellectfox.by',
+    role: 'TEACHER',
+    students: [
+      '2e6667e8-0352-48f0-8d6d-e38bf30338a5',
+      'dc4e0a6d-fb2f-40c2-a57e-11cea1d82d47',
+      '1730c5ac-e7ee-4f1a-b92a-2d59d23f78c2',
+    ],
+  },
+];
+
+function combinedParam(arr1, arr2) {
+  const result = arr1.map((item, i) => {
+    if (item.role.toLowerCase() === 'admin') {
+      delete item.role;
+      const role = Object.assign(item, { role: { id: arr2[0].id, name: arr2[0].name } });
+      return role;
+    }
+
+    if (item.role.toLowerCase() === 'teacher') {
+      delete item.role;
+      const role = Object.assign(item, { role: { id: arr2[1].id, name: arr2[1].name } });
+      const studentsId = Object.assign(item, { studentIds: arr1[i].students });
+      delete item.students;
+      return Object.assign(role, studentsId);
+    }
+
+    if (item.role.toLowerCase() === 'student') {
+      delete item.role;
+      const role = Object.assign(item, { role: { id: arr2[2].id, name: arr2[2].name } });
+      const teachersId = Object.assign(item, { teachersIds: arr1[i].teachers });
+      delete item.teachers;
+      return Object.assign(role, teachersId);
+    }
+
+    return null;
+  });
+
+  return result;
+}
+
+console.log(combinedParam(users, roles));
+
+class User {
+  constructor(usersArr) {
+    this.usersArr = usersArr;
+  }
+}
+
+class Admin extends User {}
+
+const adminInstance = new Admin(users[2]);
+console.log(adminInstance);
+
+class Teacher extends User {
+  get getStudents() {
+    const getSt = this.usersArr.reduce((newArr, item) => {
+      if (item.studentIds) {
+        newArr.push(`Student {${item.studentIds}}`);
+      }
+
+      return newArr;
+    }, []);
+
+    return getSt;
+  }
+}
+
+const teacherInstance = new Teacher(users);
+console.log(teacherInstance);
+console.log(teacherInstance.getStudents);
+
+class Student extends User {
+  get getTeachers() {
+    const getTh = this.usersArr.reduce((newArr, item) => {
+      if (item.teachersIds) {
+        newArr.push(`Teacher {${item.teachersIds}}`);
+      }
+
+      return newArr;
+    }, []);
+
+    return getTh;
+  }
+}
+
+const studentInstance = new Student(users);
+console.log(studentInstance);
+console.log(studentInstance.getTeachers);

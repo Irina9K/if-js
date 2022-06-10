@@ -125,8 +125,6 @@ console.log('Converted array');
 
 replacingElements(elements);
 
-console.log('Generated array');
-
 // Functions - part 2
 
 console.log('The function returns the sum');

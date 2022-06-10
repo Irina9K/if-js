@@ -28,9 +28,6 @@ module.exports = {
       },
     ],
 
-    'max-classes-per-file': [
-      'error',
-      { ignoreExpressions: true, max: 2 },
-    ],
+    'max-classes-per-file': ['error', { ignoreExpressions: true, max: 5 }],
   },
 };
