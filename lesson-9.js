@@ -12,7 +12,7 @@ const colors = {
 
   next() {
     if (this.counter < this.data.length) {
-      return { value: this.data[this.counter++], done: false };
+      return { value: this.data[this.counter+=1], done: false };
     }
 
     if (this.counter === this.data.length) {
