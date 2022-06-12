@@ -12,11 +12,13 @@ const colors = {
 
   next() {
     if (this.counter < this.data.length) {
-      return { value: this.data[this.counter+=1], done: false };
+      const start = this.data[(this.counter += 1)];
+      return { value: start, done: false };
     }
 
     if (this.counter === this.data.length) {
-      return { value: this.data[(this.counter = 0)], done: false };
+      const end = this.data[(this.counter = 0)];
+      return { value: end, done: false };
     }
 
     return { done: true };
@@ -24,7 +26,7 @@ const colors = {
 };
 
 for (let i = 0; i < elementsArr.length; i += 1) {
-  elementsArr[i].addEventListener('click', function onClick(event) {
+  elementsArr[i].addEventListener('click', (event) => {
     event.target.style.color = colors.next().value;
   });
 }
