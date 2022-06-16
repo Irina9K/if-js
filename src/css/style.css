@@ -1,4 +1,4 @@
-@import "../styles/fonts.css";
+@import "../css/fonts.css";
 
 * {
   box-sizing: border-box;
@@ -400,7 +400,7 @@ h2::after {
 
 .main__homes {
   background-color: #eaf0f9;
-  height: 828px;
+  min-height: 828px;
 }
 
 .main__homes--hotel {
@@ -410,10 +410,7 @@ h2::after {
   justify-content: center;
 }
 
-.main__russia,
-.main__spain--homes,
-.main__slowakia,
-.main__germany {
+.main__homes--element{
   display: flex;
   flex-direction: column;
   justify-content: center;
