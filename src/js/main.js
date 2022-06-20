@@ -77,6 +77,7 @@ const screenHomes = data.map((item) => {
 
   const img = document.createElement('img');
   img.setAttribute('src', item.imageUrl);
+  img.style.width = 296 +'px';
   figure.appendChild(img);
 
   const figcaption = document.createElement('figcaption');
