@@ -2,14 +2,14 @@
   "name": "if",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "src/js/main.js",
   "scripts": {
     "test": "jest --env=jsdom",
-    "prettier": "prettier --write *.js",
-    "lint": "eslint --debug *.js",
-    "lint:write": "eslint --debug *.js --fix",
+    "prettier": "prettier --write src/**/*.js",
+    "lint": "eslint --debug src/**/*.js",
+    "lint:write": "eslint --debug src/**/*.js --fix",
     "prepeare": "husky install",
-    "lint-husky": "prettier --write *.js && eslint --debug *.js"
+    "lint-husky": "prettier --write src/**/*.js && eslint --debug src/**/*.js"
   },
   "repository": {
     "type": "git",
