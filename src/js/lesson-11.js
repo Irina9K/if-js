@@ -8,6 +8,8 @@ formPeopleRoom.addEventListener('click', () => {
 });
 
 const select = document.createElement('select');
+select.style.width = `${99}px'`;
+select.style.height = `${30}px`;
 
 function createSelect() {
   for (let old = 1; old <= 17; old += 1) {
@@ -16,6 +18,7 @@ function createSelect() {
     select.appendChild(option);
   }
 }
+
 createSelect();
 
 function countThings(count) {
