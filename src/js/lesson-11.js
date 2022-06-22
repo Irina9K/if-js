@@ -1,3 +1,23 @@
+const formPeopleRoom = document.getElementById('people-room');
+const filterContent = document.querySelector('.container__forms--filter');
+
+formPeopleRoom.addEventListener('click', () => {
+  if (filterContent.style.display === 'none') {
+    filterContent.style.display = 'block';
+  } else filterContent.style.display = 'none';
+});
+
+const select = document.querySelector('.filter__select');
+
+function createSelect() {
+  for (let old = 1; old <= 17; old += 1) {
+    const option = document.createElement('option');
+    option.innerHTML = `${old} years old`;
+    select.appendChild(option);
+  }
+}
+createSelect();
+
 function countThings(count) {
   const plus = count.querySelector('.btn__filter--plus');
   const minus = count.querySelector('.btn__filter--minus');
@@ -10,15 +30,28 @@ function countThings(count) {
       counter += 1;
       result.innerHTML = `${counter}`;
     }
-    if (counter <= 14 && filterPlusName === 'btn__filter--plus fifteen') {
+    if (counter <= 9 && filterPlusName === 'btn__filter--plus fifteen') {
       counter += 1;
       result.innerHTML = `${counter}`;
+      const divQuestions = document.querySelector('.wrapper__select');
+      const newSelect = select.cloneNode(true);
+      divQuestions.appendChild(newSelect);
     }
   });
   minus.addEventListener('click', () => {
-    if (counter >= 1) {
+    if (counter >= 1 && filterPlusName === 'btn__filter--plus thirty') {
       counter -= 1;
       result.innerHTML = `${counter}`;
+    }
+    if (counter >= 1 && filterPlusName === 'btn__filter--plus fifteen') {
+      counter -= 1;
+      result.innerHTML = `${counter}`;
+      const divQuestions = document.querySelector('.wrapper__select');
+      divQuestions.lastChild.remove();
+      if (document.getElementById('hidden__counter').textContent === '0') {
+        const childrenInf = document.querySelector('.wrapper__children--inf');
+        childrenInf.style.display = 'none';
+      }
     }
   });
 }
@@ -26,23 +59,13 @@ function countThings(count) {
 const counts = document.querySelectorAll('.filter__item');
 counts.forEach(countThings);
 
-// const addInf = document.querySelector('.children__inf');
+const showInf = document.querySelector('.wrapper__children--inf');
+const addInf = document.querySelector('.fifteen');
+const a = document.querySelector('.wrapper__select');
 
-function showAdd() {
-  const addInf = document.querySelector('.children__inf');
-  if (addInf.style.display === 'none') {
-    addInf.style.display = 'block';
-  } else addInf.style.display = 'block';
-  console.log(document.querySelector('.filter__counter').textContent);
-}
-showAdd();
-
-// const select = document.querySelector('.filter__select')
-// console.log(select)
-//
-// const option = document.createElement('option');
-// select.
-// for (let old=1; old<=17; old++){
-//
-//     console.log(`${old} years old`)
-// }
+addInf.addEventListener('click', () => {
+  if (showInf.style.display === 'none') {
+    showInf.style.display = 'block';
+    a.style.display = 'none';
+  } else showInf.style.display = 'block';
+});
