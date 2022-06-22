@@ -314,7 +314,6 @@ input[type='date'] {
   margin-top: 28px;
   font-size: 16px;
   margin-bottom: 12px;
-
 }
 
 .filter__select {
@@ -336,10 +335,6 @@ input[type='date'] {
 .wrapper__children--inf {
   display: none;
 }
-
-/*.wrapper__select{*/
-/*  display: none;*/
-/*}*/
 
 .header__app {
   background-color: transparent;

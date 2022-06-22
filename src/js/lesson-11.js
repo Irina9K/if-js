@@ -7,7 +7,7 @@ formPeopleRoom.addEventListener('click', () => {
   } else filterContent.style.display = 'none';
 });
 
-const select = document.querySelector('.filter__select');
+const select = document.createElement('select');
 
 function createSelect() {
   for (let old = 1; old <= 17; old += 1) {
@@ -61,11 +61,9 @@ counts.forEach(countThings);
 
 const showInf = document.querySelector('.wrapper__children--inf');
 const addInf = document.querySelector('.fifteen');
-const a = document.querySelector('.wrapper__select');
 
 addInf.addEventListener('click', () => {
   if (showInf.style.display === 'none') {
     showInf.style.display = 'block';
-    a.style.display = 'none';
   } else showInf.style.display = 'block';
 });
