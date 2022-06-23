@@ -309,16 +309,15 @@ input[type='date'] {
 
 .add__second{
   top:35%;
-  right:25%;
+  right:24%;
   width:120px
 }
 
 .add__third{
   top:35%;
-  right:17.5%;
+  right:15.5%;
   width: 100px;
 }
-
 
 .filter__item {
   display: flex;
@@ -349,13 +348,23 @@ input[type='date'] {
 .btn__filter--plus,
 .btn__filter--minus {
   background-color: #ffffff;
-  border: 1px solid #3077c6;
   width: 30px;
   height: 30px;
   cursor: pointer;
   padding-left: 9px;
   padding-top: 4px;
 }
+
+.btn__filter--minus {
+  border: 1px solid #CECECE;
+  color: #CECECE;
+}
+
+.btn__filter--plus{
+  border: 1px solid #3077c6;
+  color: #3077c6;
+}
+
 
 .wrapper__children--inf {
   display: none;
@@ -471,12 +480,12 @@ h2::after {
 }
 
 .main__container--homes {
-  max-width: 100%;
+  max-width: 1440px;
 }
 
 .main__homes {
   background-color: #eaf0f9;
-  min-height: 828px;
+  height: 828px;
 }
 
 .main__homes--hotel {
@@ -484,14 +493,16 @@ h2::after {
   align-items: flex-start;
   flex-flow: row wrap;
   justify-content: center;
-  padding-bottom: 121px;
 }
 
-.main__homes--element {
+.main__russia,
+.main__spain--homes,
+.main__slowakia,
+.main__germany {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  /*width: calc(25% - 26px);*/
+  width: calc(25% - 26px);
   margin: 8px;
 }
 
@@ -513,7 +524,6 @@ h2::after {
 .main__name--country {
   color: #bfbfbf;
   padding-top: 24px;
-  width: 295px;
 }
 
 .main__homes--hotel {
@@ -703,12 +713,6 @@ h2::after {
   color: #3077c6;
   width: 128px;
   height: 48px;
-  transition: 0.5s;
-}
-
-.button__sign:hover {
-  background-color: #3077c6;
-  color: #ffffff;
 }
 
 .main__sign--cross {
@@ -963,22 +967,24 @@ h2::after {
   margin-top: 50px;
 }
 
-.header__container {
-  padding: 51px 17px;
-}
+@media screen and (max-width: 1200px) {
+  .header__container {
+    padding: 51px 17px;
+  }
 
-.input__group--label {
-  font-size: 14px;
-  padding-left: 10px;
-}
+  .input__group--label {
+    font-size: 14px;
+    padding-left: 10px;
+  }
 
-.nav__footer--parts {
-  font-size: 18px;
-  margin-left: 71px;
-}
+  .nav__footer--parts {
+    font-size: 18px;
+    margin-left: 71px;
+  }
 
-.footer__copyright {
-  margin-left: 71px;
+  .footer__copyright {
+    margin-left: 71px;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -1299,9 +1305,9 @@ h2::after {
     height: 870px;
   }
 
-  /*.main__container--sign {*/
-  /*  display: none;*/
-  /*}*/
+  .main__container--sign {
+    display: none;
+  }
 
   .btn__destinations span {
     display: none;

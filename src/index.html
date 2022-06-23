@@ -62,7 +62,7 @@
                 type="search"
                 id="city"
                 name="city"
-                autocomplete="off"
+                required
               />
               <label class="input__group--label label__city" for="city">
                 Your destination or hotel name
@@ -83,6 +83,7 @@
                   type="text"
                   id="datain"
                   name="data"
+                  required
                 />
                 <label class="input__group--label label__data" for="datain"
                   >Check-in <span>date</span>
@@ -97,6 +98,7 @@
                   type="text"
                   id="dataout"
                   name="data"
+                  required
                 />
                 <label class="input__group--label label__data" for="dataout">
                   Check-out <span>date</span>
@@ -106,7 +108,7 @@
 
             <div class="container__forms--third">
               <div class="add__input add__first"></div>
-               <div class="add__input add__second"></div>
+              <div class="add__input add__second"></div>
               <div class="add__input add__third"></div>
               <input
                 class="input__group--input header__choice--people"
@@ -115,26 +117,24 @@
                 name="people-room"
                 autocomplete="off"
               />
-              <label class="input__group--label label__people" for="people-room">
-                2 Adults &#8212; 0 Children &#8212; 1 Room</label
-              >
+              <label class="input__group--label label__people" for="people-room"> </label>
               <div class="container__forms--filter">
                 <div class="filter__item">
                   <p class="filter__name">Adults</p>
                   <p class="btn__filter--minus">-</p>
-                  <p class="filter__counter">0</p>
+                  <p class="filter__counter first__count">0</p>
                   <p class="btn__filter--plus thirty__adults">+</p>
                 </div>
                 <div class="filter__item">
                   <p class="filter__name">Children</p>
                   <p class="btn__filter--minus">-</p>
-                  <p class="filter__counter" id="hidden__counter">0</p>
+                  <p class="filter__counter second__count" id="hidden__counter">0</p>
                   <p class="btn__filter--plus fifteen" id="addInf">+</p>
                 </div>
                 <div class="filter__item">
                   <p class="filter__name">Rooms</p>
                   <p class="btn__filter--minus">-</p>
-                  <p class="filter__counter">0</p>
+                  <p class="filter__counter third__count">0</p>
                   <p class="btn__filter--plus thirty__rooms">+</p>
                 </div>
                 <div class="wrapper__children--inf">
@@ -173,36 +173,27 @@
 
             <div class="main__offer--parts col-12">
               <div class="main__support col-3 col-m-6 col-s-12">
-                <a href="#">
-                  <svg class="icon__offer">
-                    <use xlink:href="./images/sprite/sprite.svg#support"></use>
-                  </svg>
-                </a>
+                <svg class="icon__offer">
+                  <use xlink:href="./images/sprite/sprite.svg#support"></use>
+                </svg>
                 <span class="text">Support 24/7</span>
               </div>
 
               <div class="main__communication col-3 col-m-6 col-s-12">
-                <a href="#">
-                  <svg class="icon__offer">
-                    <use xlink:href="./images/sprite/sprite.svg#communication"></use>
-                  </svg>
-                </a>
-
+                <svg class="icon__offer">
+                  <use xlink:href="./images/sprite/sprite.svg#communication"></use>
+                </svg>
                 <span class="text">Communicate directly</span>
               </div>
 
               <div class="main__booking col-3 col-m-6 col-s-12">
-                <a href="#">
-                  <svg class="icon__offer">
-                    <use xlink:href="./images/sprite/sprite.svg#booking"></use>
-                  </svg>
-                </a>
-
+                <svg class="icon__offer">
+                  <use xlink:href="./images/sprite/sprite.svg#booking"></use>
+                </svg>
                 <span class="text">Book online</span>
               </div>
 
               <div class="main__review col-3 col-m-6 col-s-12">
-                <a href="#"> </a>
                 <svg class="icon__offer">
                   <use xlink:href="./images/sprite/sprite.svg#reviews"></use>
                 </svg>
@@ -220,6 +211,38 @@
             </div>
 
             <div class="main__homes--hotel">
+              <figure class="main__russia col-s-6 col-m-4">
+                <img src="./images/png/hotel_leopold.png" alt="hotel_leopold" />
+                <figcaption class="main__name--img">
+                  <a href="#" class="nav__link--country">Hotel Leopold</a>
+                  <a href="#" class="main__name--country">Saint Petersburg, Russia</a>
+                </figcaption>
+              </figure>
+
+              <figure class="main__spain--homes col-s-6 col-m-4">
+                <img src="./images/png/apartment_sunshine.png" alt="apartment_sunshine" />
+                <figcaption class="main__name--img">
+                  <a href="#" class="nav__link--country"> Apartment Sunshine</a>
+                  <a href="#" class="main__name--country"> Santa Cruz de Tenerife, Spain</a>
+                </figcaption>
+              </figure>
+
+              <figure class="main__slowakia col-m-4">
+                <img src="./images/png/villa_kunerad.png" alt="villa_kunerad" />
+                <figcaption class="main__name--img">
+                  <a href="#" class="nav__link--country">Villa Kunerad</a>
+                  <a href="#" class="main__name--country">Vysokie Tatry, Slowakia</a>
+                </figcaption>
+              </figure>
+
+              <figure class="main__germany col-m-4">
+                <img src="./images/png/hostel_friendship.png" alt="hostel_friendship" />
+                <figcaption class="main__name--img">
+                  <a href="#" class="nav__link--country"> Hostel Friendship</a>
+                  <a href="#" class="main__name--country"> Berlin, Germany</a>
+                </figcaption>
+              </figure>
+
               <div class="main__homes--button">
                 <button class="btn button__switch--homes">
                   <svg class="icon__arrow--homes">
