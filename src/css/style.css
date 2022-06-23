@@ -295,6 +295,31 @@ input[type='date'] {
   display: none;
 }
 
+.add__input {
+  position: absolute;
+  font-size: 18px;
+  border: 0;
+}
+
+.add__first{
+  top:35%;
+  right:34%;
+  width: 80px;
+}
+
+.add__second{
+  top:35%;
+  right:25%;
+  width:120px
+}
+
+.add__third{
+  top:35%;
+  right:17.5%;
+  width: 100px;
+}
+
+
 .filter__item {
   display: flex;
   justify-content: space-between;
@@ -459,6 +484,7 @@ h2::after {
   align-items: flex-start;
   flex-flow: row wrap;
   justify-content: center;
+  padding-bottom: 121px;
 }
 
 .main__homes--element {

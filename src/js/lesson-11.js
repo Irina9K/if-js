@@ -21,17 +21,28 @@ function createSelect() {
 
 createSelect();
 
+// const input = document.querySelector('.header__choice--people');
+const adults = document.querySelector('.add__first');
+const children = document.querySelector('.add__second');
+const room = document.querySelector('.add__third');
+
 function countThings(count) {
   const plus = count.querySelector('.btn__filter--plus');
   const minus = count.querySelector('.btn__filter--minus');
   const result = count.querySelector('.filter__counter');
   let counter = 0;
+  // input.value = `${counter} Adults — ${counter} Children — ${counter} Room`;
   const filterPlusName = count.lastChild.previousSibling.className;
-
   plus.addEventListener('click', () => {
-    if (counter <= 29 && filterPlusName === 'btn__filter--plus thirty') {
+    if (counter <= 29 && filterPlusName === 'btn__filter--plus thirty__adults') {
       counter += 1;
       result.innerHTML = `${counter}`;
+      adults.innerHTML = `${counter} Adults`;
+    }
+    if (counter <= 29 && filterPlusName === 'btn__filter--plus thirty__rooms') {
+      counter += 1;
+      result.innerHTML = `${counter}`;
+      room.innerHTML = `— ${counter} Room`;
     }
     if (counter <= 9 && filterPlusName === 'btn__filter--plus fifteen') {
       counter += 1;
@@ -39,12 +50,20 @@ function countThings(count) {
       const divQuestions = document.querySelector('.wrapper__select');
       const newSelect = select.cloneNode(true);
       divQuestions.appendChild(newSelect);
+      // input.value = `${counter} Children`;
+      children.innerHTML = `— ${counter} Children `;
     }
   });
   minus.addEventListener('click', () => {
-    if (counter >= 1 && filterPlusName === 'btn__filter--plus thirty') {
+    if (counter >= 1 && filterPlusName === 'btn__filter--plus thirty__adults') {
       counter -= 1;
       result.innerHTML = `${counter}`;
+      adults.innerHTML = `${counter} Adults`;
+    }
+    if (counter >= 1 && filterPlusName === 'btn__filter--plus thirty__rooms') {
+      counter -= 1;
+      result.innerHTML = `${counter}`;
+      room.innerHTML = `— ${counter} Room`;
     }
     if (counter >= 1 && filterPlusName === 'btn__filter--plus fifteen') {
       counter -= 1;
@@ -55,6 +74,7 @@ function countThings(count) {
         const childrenInf = document.querySelector('.wrapper__children--inf');
         childrenInf.style.display = 'none';
       }
+      children.innerHTML = `— ${counter} Children `;
     }
   });
 }
