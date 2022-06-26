@@ -51,6 +51,7 @@ function countThings(count) {
       counter += 1;
       result.innerHTML = `${counter}`;
       adults.innerHTML = `${counter} Adults`;
+
       if (result.innerHTML === '30') {
         plus.style.color = '#CECECE';
         plus.style.borderColor = '#CECECE';
@@ -61,6 +62,7 @@ function countThings(count) {
       counter += 1;
       result.innerHTML = `${counter}`;
       room.innerHTML = `— ${counter} Room`;
+
       if (result.innerHTML === '30') {
         plus.style.color = '#CECECE';
         plus.style.borderColor = '#CECECE';
@@ -70,6 +72,7 @@ function countThings(count) {
     if (counter <= 9 && filterPlusName === 'btn__filter--plus fifteen') {
       counter += 1;
       result.innerHTML = `${counter}`;
+
       if (result.innerHTML === '10') {
         plus.style.color = '#CECECE';
         plus.style.borderColor = '#CECECE';
@@ -81,7 +84,9 @@ function countThings(count) {
       children.innerHTML = `— ${counter} Children `;
     }
   });
+
   minus.addEventListener('click', () => {
+
     if (+result.innerHTML <= 1) {
       minus.style.color = '#CECECE';
       minus.style.borderColor = '#CECECE';
@@ -94,6 +99,7 @@ function countThings(count) {
       counter -= 1;
       result.innerHTML = `${counter}`;
       adults.innerHTML = `${counter} Adults`;
+
       if (+result.innerHTML <= 30) {
         plus.style.color = '#3077C6';
         plus.style.borderColor = '#3077C6';
@@ -104,6 +110,7 @@ function countThings(count) {
       counter -= 1;
       result.innerHTML = `${counter}`;
       room.innerHTML = `— ${counter} Room`;
+
       if (+result.innerHTML <= 30) {
         plus.style.color = '#3077C6';
         plus.style.borderColor = '#3077C6';
@@ -115,10 +122,12 @@ function countThings(count) {
       result.innerHTML = `${counter}`;
       const divQuestions = document.querySelector('.wrapper__select');
       divQuestions.lastChild.remove();
+
       if (+result.innerHTML <= 10) {
         plus.style.color = '#3077C6';
         plus.style.borderColor = '#3077C6';
       }
+
       if (document.getElementById('hidden__counter').textContent === '0') {
         const childrenInf = document.querySelector('.wrapper__children--inf');
         childrenInf.style.display = 'none';
@@ -130,21 +139,6 @@ function countThings(count) {
 
 const counts = document.querySelectorAll('.filter__item');
 counts.forEach(countThings);
-
-//
-// const result = document.querySelector('.second__count');
-// const minus = document.querySelector('.btn__filter--minus');
-// console.log(result.innerHTML==='0')
-// console.log(minus)
-//
-//
-// if (+result.innerHTML === 0) {
-//   minus.style.color = '#CECECE';
-//  minus.style.borderColor = '#CECECE';
-// } else {
-//   minus.style.color = '#3077C6';
-//  minus.style.borderColor = '#3077C6';
-// }
 
 const showInf = document.querySelector('.wrapper__children--inf');
 const addInf = document.querySelector('.fifteen');
