@@ -102,3 +102,4 @@ addInf.addEventListener('click', () => {
     showInf.style.display = 'block';
   } else showInf.style.display = 'block';
 });
+

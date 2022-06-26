@@ -485,7 +485,7 @@ h2::after {
 
 .main__homes {
   background-color: #eaf0f9;
-  height: 828px;
+  min-height: 828px;
 }
 
 .main__homes--hotel {
@@ -495,14 +495,11 @@ h2::after {
   justify-content: center;
 }
 
-.main__russia,
-.main__spain--homes,
-.main__slowakia,
-.main__germany {
+.main__homes--element {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: calc(25% - 26px);
+  /*width: calc(25% - 26px);*/
   margin: 8px;
 }
 
@@ -524,6 +521,8 @@ h2::after {
 .main__name--country {
   color: #bfbfbf;
   padding-top: 24px;
+  width: 295px;
+  padding-bottom: 121px;
 }
 
 .main__homes--hotel {
