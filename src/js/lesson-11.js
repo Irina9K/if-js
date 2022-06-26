@@ -2,9 +2,14 @@ const formPeopleRoom = document.getElementById('people-room');
 const filterContent = document.querySelector('.container__forms--filter');
 
 formPeopleRoom.addEventListener('click', () => {
-  if (filterContent.style.display === 'none') {
+  if (filterContent.style.display === 'none' || '') {
+    filterContent.style.display = 'none';
+  }
+  if (filterContent.style.display === 'block') {
+    filterContent.style.display = 'none';
+  } else {
     filterContent.style.display = 'block';
-  } else filterContent.style.display = 'none';
+  }
 });
 
 const select = document.createElement('select');
@@ -46,17 +51,29 @@ function countThings(count) {
       counter += 1;
       result.innerHTML = `${counter}`;
       adults.innerHTML = `${counter} Adults`;
+      if (result.innerHTML === '30') {
+        plus.style.color = '#CECECE';
+        plus.style.borderColor = '#CECECE';
+      }
     }
 
     if (counter <= 29 && filterPlusName === 'btn__filter--plus thirty__rooms') {
       counter += 1;
       result.innerHTML = `${counter}`;
       room.innerHTML = `— ${counter} Room`;
+      if (result.innerHTML === '30') {
+        plus.style.color = '#CECECE';
+        plus.style.borderColor = '#CECECE';
+      }
     }
 
     if (counter <= 9 && filterPlusName === 'btn__filter--plus fifteen') {
       counter += 1;
       result.innerHTML = `${counter}`;
+      if (result.innerHTML === '10') {
+        plus.style.color = '#CECECE';
+        plus.style.borderColor = '#CECECE';
+      }
       const divQuestions = document.querySelector('.wrapper__select');
       const newSelect = select.cloneNode(true);
       divQuestions.appendChild(newSelect);
@@ -69,12 +86,20 @@ function countThings(count) {
       counter -= 1;
       result.innerHTML = `${counter}`;
       adults.innerHTML = `${counter} Adults`;
+      if (+result.innerHTML <= 30) {
+        plus.style.color = '#3077C6';
+        plus.style.borderColor = '#3077C6';
+      }
     }
 
     if (counter >= 1 && filterPlusName === 'btn__filter--plus thirty__rooms') {
       counter -= 1;
       result.innerHTML = `${counter}`;
       room.innerHTML = `— ${counter} Room`;
+      if (+result.innerHTML <= 30) {
+        plus.style.color = '#3077C6';
+        plus.style.borderColor = '#3077C6';
+      }
     }
 
     if (counter >= 1 && filterPlusName === 'btn__filter--plus fifteen') {
@@ -82,6 +107,10 @@ function countThings(count) {
       result.innerHTML = `${counter}`;
       const divQuestions = document.querySelector('.wrapper__select');
       divQuestions.lastChild.remove();
+      if (+result.innerHTML <= 10) {
+        plus.style.color = '#3077C6';
+        plus.style.borderColor = '#3077C6';
+      }
       if (document.getElementById('hidden__counter').textContent === '0') {
         const childrenInf = document.querySelector('.wrapper__children--inf');
         childrenInf.style.display = 'none';
@@ -90,6 +119,20 @@ function countThings(count) {
     }
   });
 }
+
+// const result = document.querySelector('.first__count');
+// const plus = document.querySelector('.thirty__adults');
+// console.log( result)
+// console.log(plus)
+//
+//
+// if (result.innerHTML === '30') {
+//   plus.style.color = '#CECECE';
+//   plus.style.borderColor = '#CECECE';
+// } else {
+//   plus.style.color = 'red';
+//   plus.style.borderColor = 'red';
+// }
 
 const counts = document.querySelectorAll('.filter__item');
 counts.forEach(countThings);
@@ -100,6 +143,7 @@ const addInf = document.querySelector('.fifteen');
 addInf.addEventListener('click', () => {
   if (showInf.style.display === 'none') {
     showInf.style.display = 'block';
-  } else showInf.style.display = 'block';
+  } else {
+    showInf.style.display = 'block';
+  }
 });
-
