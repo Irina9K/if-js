@@ -522,6 +522,10 @@ h2::after {
   color: #bfbfbf;
   padding-top: 24px;
   width: 295px;
+
+}
+
+.main__homes--element:nth-child(8){
   padding-bottom: 121px;
 }
 
