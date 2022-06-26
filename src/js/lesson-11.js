@@ -82,6 +82,14 @@ function countThings(count) {
     }
   });
   minus.addEventListener('click', () => {
+    if (+result.innerHTML <= 1) {
+      minus.style.color = '#CECECE';
+      minus.style.borderColor = '#CECECE';
+    } else {
+      minus.style.color = '#3077c6';
+      minus.style.borderColor = '#3077c6';
+    }
+
     if (counter >= 1 && filterPlusName === 'btn__filter--plus thirty__adults') {
       counter -= 1;
       result.innerHTML = `${counter}`;
@@ -120,22 +128,23 @@ function countThings(count) {
   });
 }
 
-// const result = document.querySelector('.first__count');
-// const plus = document.querySelector('.thirty__adults');
-// console.log( result)
-// console.log(plus)
-//
-//
-// if (result.innerHTML === '30') {
-//   plus.style.color = '#CECECE';
-//   plus.style.borderColor = '#CECECE';
-// } else {
-//   plus.style.color = 'red';
-//   plus.style.borderColor = 'red';
-// }
-
 const counts = document.querySelectorAll('.filter__item');
 counts.forEach(countThings);
+
+//
+// const result = document.querySelector('.second__count');
+// const minus = document.querySelector('.btn__filter--minus');
+// console.log(result.innerHTML==='0')
+// console.log(minus)
+//
+//
+// if (+result.innerHTML === 0) {
+//   minus.style.color = '#CECECE';
+//  minus.style.borderColor = '#CECECE';
+// } else {
+//   minus.style.color = '#3077C6';
+//  minus.style.borderColor = '#3077C6';
+// }
 
 const showInf = document.querySelector('.wrapper__children--inf');
 const addInf = document.querySelector('.fifteen');
