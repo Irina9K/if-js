@@ -107,16 +107,43 @@
             </div>
 
             <div class="container__forms--third">
+              <div class="add__input add__first"></div>
+              <div class="add__input add__second"></div>
+              <div class="add__input add__third"></div>
               <input
                 class="input__group--input header__choice--people"
                 type="text"
                 id="people-room"
                 name="people-room"
-                required
+                autocomplete="off"
               />
-              <label class="input__group--label label__people" for="people-room">
-                2 Adults &#8212; 0 Children &#8212; 1 Room</label
-              >
+              <label class="input__group--label label__people" for="people-room"> </label>
+              <div class="container__forms--filter">
+                <div class="filter__item">
+                  <p class="filter__name">Adults</p>
+                  <p class="btn__filter--minus">-</p>
+                  <p class="filter__counter first__count">0</p>
+                  <p class="btn__filter--plus thirty__adults">+</p>
+                </div>
+                <div class="filter__item">
+                  <p class="filter__name">Children</p>
+                  <p class="btn__filter--minus">-</p>
+                  <p class="filter__counter second__count" id="hidden__counter">0</p>
+                  <p class="btn__filter--plus fifteen" id="addInf">+</p>
+                </div>
+                <div class="filter__item">
+                  <p class="filter__name">Rooms</p>
+                  <p class="btn__filter--minus">-</p>
+                  <p class="filter__counter third__count">0</p>
+                  <p class="btn__filter--plus thirty__rooms">+</p>
+                </div>
+                <div class="wrapper__children--inf">
+                  <div class="filter__age">
+                    What is the age of the child you’re travelling with?
+                  </div>
+                  <div class="wrapper__select"></div>
+                </div>
+              </div>
             </div>
 
             <div class="container__forms--button">
@@ -146,36 +173,27 @@
 
             <div class="main__offer--parts col-12">
               <div class="main__support col-3 col-m-6 col-s-12">
-                <a href="#">
-                  <svg class="icon__offer">
-                    <use xlink:href="./images/sprite/sprite.svg#support"></use>
-                  </svg>
-                </a>
+                <svg class="icon__offer">
+                  <use xlink:href="./images/sprite/sprite.svg#support"></use>
+                </svg>
                 <span class="text">Support 24/7</span>
               </div>
 
               <div class="main__communication col-3 col-m-6 col-s-12">
-                <a href="#">
-                  <svg class="icon__offer">
-                    <use xlink:href="./images/sprite/sprite.svg#communication"></use>
-                  </svg>
-                </a>
-
+                <svg class="icon__offer">
+                  <use xlink:href="./images/sprite/sprite.svg#communication"></use>
+                </svg>
                 <span class="text">Communicate directly</span>
               </div>
 
               <div class="main__booking col-3 col-m-6 col-s-12">
-                <a href="#">
-                  <svg class="icon__offer">
-                    <use xlink:href="./images/sprite/sprite.svg#booking"></use>
-                  </svg>
-                </a>
-
+                <svg class="icon__offer">
+                  <use xlink:href="./images/sprite/sprite.svg#booking"></use>
+                </svg>
                 <span class="text">Book online</span>
               </div>
 
               <div class="main__review col-3 col-m-6 col-s-12">
-                <a href="#"> </a>
                 <svg class="icon__offer">
                   <use xlink:href="./images/sprite/sprite.svg#reviews"></use>
                 </svg>
@@ -557,5 +575,6 @@
       </div>
     </footer>
     <script src="js/index.js"></script>
+    <script src="js/lesson-11.js"></script>
   </body>
 </html>

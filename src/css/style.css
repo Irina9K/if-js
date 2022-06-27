@@ -1,4 +1,4 @@
-@import "../css/fonts.css";
+@import '../css/fonts.css';
 
 * {
   box-sizing: border-box;
@@ -8,7 +8,7 @@
 
 body {
   color: #383838;
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0 auto;
   max-width: 1440px;
 }
@@ -24,7 +24,7 @@ a {
 }
 
 .header {
-  background-image: url("../images/png/castelmezzano.png");
+  background-image: url('../images/png/castelmezzano.png');
   background-position: top center;
   background-repeat: no-repeat;
   width: 100%;
@@ -65,7 +65,7 @@ a {
 
 .nav__link::after {
   background-color: transparent;
-  content: "";
+  content: '';
   display: block;
   height: 4px;
   margin-top: 10px;
@@ -128,13 +128,11 @@ a {
 }
 
 .icon__account:hover {
-  filter: invert(22%) sepia(45%) saturate(672%) hue-rotate(344deg)
-    brightness(95%) contrast(102%);
+  filter: invert(22%) sepia(45%) saturate(672%) hue-rotate(344deg) brightness(95%) contrast(102%);
 }
 
 .icon__night:hover {
-  filter: invert(22%) sepia(45%) saturate(672%) hue-rotate(344deg)
-    brightness(95%) contrast(102%);
+  filter: invert(22%) sepia(45%) saturate(672%) hue-rotate(344deg) brightness(95%) contrast(102%);
 }
 
 .section__header--top {
@@ -219,8 +217,8 @@ input:not(:focus):valid ~ label {
   top: -70px;
 }
 
-input[type="date"] {
-  font-family: "Roboto", sans-serif;
+input[type='date'] {
+  font-family: 'Roboto', sans-serif;
   font-size: 18px;
 }
 
@@ -285,6 +283,93 @@ input[type="date"] {
   width: 100%;
 }
 
+.container__forms--filter {
+  position: absolute;
+  padding: 22px;
+  width: 259px;
+  min-height: 158px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  top: 115%;
+  right: 16%;
+  display: none;
+}
+
+.add__input {
+  position: absolute;
+  font-size: 18px;
+  border: 0;
+}
+
+.add__first{
+  top:35%;
+  right:34%;
+  width: 80px;
+}
+
+.add__second{
+  top:35%;
+  right:24%;
+  width:120px
+}
+
+.add__third{
+  top:35%;
+  right:15.5%;
+  width: 100px;
+}
+
+.filter__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.filter__name {
+  width: 87px;
+}
+
+.filter__counter{
+  width: 30px;
+  text-align: center;
+}
+
+.filter__age {
+  margin-top: 28px;
+  font-size: 16px;
+  margin-bottom: 12px;
+}
+
+.filter__select {
+  width: 99px;
+  height: 30px;
+}
+
+.btn__filter--plus,
+.btn__filter--minus {
+  background-color: #ffffff;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  padding-left: 9px;
+  padding-top: 4px;
+}
+
+.btn__filter--minus {
+  border: 1px solid #CECECE;
+  color: #CECECE;
+}
+
+.btn__filter--plus{
+  border: 1px solid #3077c6;
+  color: #3077c6;
+}
+
+
+.wrapper__children--inf {
+  display: none;
+}
+
 .header__app {
   background-color: transparent;
   display: flex;
@@ -314,7 +399,7 @@ h2 {
 
 h2::after {
   background-color: #f5bd41;
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   width: 100px;
@@ -410,7 +495,7 @@ h2::after {
   justify-content: center;
 }
 
-.main__homes--element{
+.main__homes--element {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -424,7 +509,7 @@ h2::after {
 }
 
 .main__name--img
-/*.main__name--country */ {
+  /*.main__name--country */ {
   display: flex;
   flex-direction: column;
   font-size: 24px;
@@ -437,6 +522,11 @@ h2::after {
   color: #bfbfbf;
   padding-top: 24px;
   width: 295px;
+
+}
+
+.main__homes--element:nth-child(8){
+  padding-bottom: 121px;
 }
 
 .main__homes--hotel {
@@ -538,7 +628,7 @@ h2::after {
 }
 
 .wrapper__destinations__img::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
@@ -626,12 +716,6 @@ h2::after {
   color: #3077c6;
   width: 128px;
   height: 48px;
-  transition: 0.5s;
-}
-
-.button__sign:hover {
-  background-color: #3077c6;
-  color: #ffffff;
 }
 
 .main__sign--cross {
@@ -795,7 +879,7 @@ h2::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
   font-size: 18px;
   margin-bottom: 8px;
@@ -886,22 +970,24 @@ h2::after {
   margin-top: 50px;
 }
 
-.header__container {
-  padding: 51px 17px;
-}
+@media screen and (max-width: 1200px) {
+  .header__container {
+    padding: 51px 17px;
+  }
 
-.input__group--label {
-  font-size: 14px;
-  padding-left: 10px;
-}
+  .input__group--label {
+    font-size: 14px;
+    padding-left: 10px;
+  }
 
-.nav__footer--parts {
-  font-size: 18px;
-  margin-left: 71px;
-}
+  .nav__footer--parts {
+    font-size: 18px;
+    margin-left: 71px;
+  }
 
-.footer__copyright {
-  margin-left: 71px;
+  .footer__copyright {
+    margin-left: 71px;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -1031,8 +1117,7 @@ h2::after {
   }
 
   .icon__menu:hover {
-    filter: invert(22%) sepia(45%) saturate(672%) hue-rotate(344deg)
-      brightness(95%) contrast(102%);
+    filter: invert(22%) sepia(45%) saturate(672%) hue-rotate(344deg) brightness(95%) contrast(102%);
   }
 
   .icon__account {
@@ -1118,8 +1203,8 @@ h2::after {
     color: transparent;
   }
 
-  input[type="search"] {
-    font-family: "Roboto", sans-serif;
+  input[type='search'] {
+    font-family: 'Roboto', sans-serif;
     font-size: 15px;
     padding-top: 5px;
   }
@@ -1130,8 +1215,8 @@ h2::after {
     top: -15px;
   }
 
-  input[type="date"] {
-    font-family: "Roboto", sans-serif;
+  input[type='date'] {
+    font-family: 'Roboto', sans-serif;
     font-size: 15px;
     padding-top: 10px;
   }
@@ -1223,9 +1308,9 @@ h2::after {
     height: 870px;
   }
 
-  /*.main__container--sign {*/
-  /*  display: none;*/
-  /*}*/
+  .main__container--sign {
+    display: none;
+  }
 
   .btn__destinations span {
     display: none;
@@ -1461,7 +1546,7 @@ h2::after {
   }
 
   .footer {
-    background-image: url("../images/svg/logo_vector_footer.svg");
+    background-image: url('../images/svg/logo_vector_footer.svg');
     background-repeat: no-repeat;
     background-position: top 40px center;
     height: 203px;
@@ -1589,8 +1674,8 @@ h2::after {
     display: none;
   }
 
-  input[type="date"] {
-    font-family: "Roboto", sans-serif;
+  input[type='date'] {
+    font-family: 'Roboto', sans-serif;
     font-size: 15px;
     font-weight: 500;
   }
@@ -1861,7 +1946,7 @@ h2::after {
   }
 
   .footer {
-    background-image: url("../images/svg/logo_vector_footer.svg");
+    background-image: url('../images/svg/logo_vector_footer.svg');
     background-repeat: no-repeat;
     background-position: top 40px center;
     height: 203px;
