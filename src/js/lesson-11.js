@@ -86,7 +86,6 @@ function countThings(count) {
   });
 
   minus.addEventListener('click', () => {
-
     if (+result.innerHTML <= 1) {
       minus.style.color = '#CECECE';
       minus.style.borderColor = '#CECECE';
