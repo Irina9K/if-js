@@ -478,6 +478,18 @@ h2::after {
 .col-12 {
   width: 100%;
 }
+.row__free {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /*flex-wrap: wrap;*/
+  /*justify-content: center;*/
+  /*margin: 0 -8px;*/
+}
+
+.main__container--free{
+  display: none;
+}
 
 .main__container--homes,
 .main__container--free{
@@ -506,10 +518,17 @@ h2::after {
   /*width: calc(25% - 26px);*/
   margin: 8px;
 }
+.main__free--element{
+  margin: 0 70px;
+}
 
 .nav__link--country {
   color: #3077c6;
   text-decoration: none;
+}
+
+.main__free--element .main__name--img{
+  font-size: 30px;
 }
 
 .main__name--img
@@ -526,6 +545,10 @@ h2::after {
   color: #bfbfbf;
   padding-top: 24px;
   width: 295px;
+}
+
+.main__free--element{
+  padding-bottom: 70px;
 }
 
 .main__homes--element:nth-child(8){

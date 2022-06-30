@@ -1,33 +1,72 @@
-// document.querySelector('.header__button').onclick = clickSearch;
-// const startShow = document.querySelector('.main__free');
-// const elementFree = startShow.lastElementChild.lastElementChild;
+const startShow = document.querySelector('.main__free');
+const elementFree = startShow.lastElementChild.lastElementChild;
 
-// const q = fetch('https://fe-student-api.herokuapp.com/api/hotels?search=us')
-//     .then((response) => response.json())
-//     .then((result) => console.log(result[0].name));
-/* eslint-disable */
+const API_URL = 'https://fe-student-api.herokuapp.com/api';
+const PATH_FOR_HOTELS = 'hotels';
+
 const url = 'https://fe-student-api.herokuapp.com/api/hotels?search=us';
-async function getPlaces(url) {
-  const response = await fetch(url);
+async function getPlaces(searchString) {
+  const response = await fetch(`${API_URL}/${PATH_FOR_HOTELS}?=${searchString}`);
   const result = await response.json();
-  console.log(result[0].country.toLowerCase() === 'russia');
-  clickSearch(result);
+  return result;
 }
 
 getPlaces(url);
 
-function clickSearch(result) {
-  const inputValue = document.querySelector('.header__choice--city').value.trim().toLowerCase();
-  console.log(inputValue);
-  document.querySelector('.title_free').innerHTML = inputValue;
-  console.log(result[0].country);
-  console.log(result[0].country === 'Russia');
-  console.log(result[0].country === inputValue);
-  if (result[0].country === inputValue) {
-    console.log('hi');
-  } else {
-    console.log(result[0].country === 'Russia');
-  }
+async function clickSearch() {
+  const strForSearch = document.querySelector('.header__choice--city').value.trim().toLowerCase();
+  const searchResult = await getPlaces(strForSearch);
+
+  searchResult.forEach((item) => {
+    const hasCountry = strForSearch === item.country.toLowerCase();
+    const hasCity = strForSearch === item.city.toLowerCase();
+    const hasHotel = strForSearch === item.name.toLowerCase();
+
+    if (hasCountry || hasCity || hasHotel) {
+      const figure = document.createElement('figure');
+      figure.className = 'main__free--element';
+      figure.setAttribute('id', item.id);
+      elementFree.appendChild(figure);
+
+      const img = document.createElement('img');
+      img.setAttribute('src', item.imageUrl);
+      img.style.width = `${350}px`;
+      img.style.height = `${350}px`;
+      figure.appendChild(img);
+
+      const figcaption = document.createElement('figcaption');
+      figcaption.className = 'main__name--img';
+      figure.appendChild(figcaption);
+
+      const hotelName = document.createElement('a');
+      hotelName.setAttribute('href', '#');
+      hotelName.className = 'nav__link--country';
+      hotelName.innerHTML = item.name;
+      figcaption.appendChild(hotelName);
+
+      const countryName = document.createElement('a');
+      countryName.setAttribute('href', '#');
+      countryName.className = 'main__name--country';
+      countryName.innerHTML = `${item.city}  ${item.country}`;
+      figcaption.appendChild(countryName);
+    }
+    // if(strForSearch ===''){
+    // alert('enter name')
+    // }
+  });
 }
+
 document.querySelector('.header__button').onclick = clickSearch;
 
+//
+// function searchName(enterString) {
+//   const enterStringLower = enterString.toLowerCase();
+//   for (let i = 0; i < data.length; i += 1) {
+//     const hasCountry = enterStringLower === data[i].country.toLowerCase();
+//     const hasCity = enterStringLower === data[i].city.toLowerCase();
+//
+//     if (hasCountry || hasCity) {
+//       console.log(data[i]);
+//     }
+//   }
+// }

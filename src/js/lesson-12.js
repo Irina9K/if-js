@@ -4,7 +4,6 @@ const elementHomes = start.lastElementChild.lastElementChild;
 fetch('https://fe-student-api.herokuapp.com/api/hotels/popular')
   .then((response) => response.json())
   .then((result) => {
-    console.log(result);
     result.forEach((item) => {
       const figure = document.createElement('figure');
       figure.className = 'main__homes--element';
