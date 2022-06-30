@@ -50,23 +50,18 @@ async function clickSearch() {
       countryName.innerHTML = `${item.city}  ${item.country}`;
       figcaption.appendChild(countryName);
     }
-    // if(strForSearch ===''){
-    // alert('enter name')
-    // }
   });
 }
 
 document.querySelector('.header__button').onclick = clickSearch;
 
-//
-// function searchName(enterString) {
-//   const enterStringLower = enterString.toLowerCase();
-//   for (let i = 0; i < data.length; i += 1) {
-//     const hasCountry = enterStringLower === data[i].country.toLowerCase();
-//     const hasCity = enterStringLower === data[i].city.toLowerCase();
-//
-//     if (hasCountry || hasCity) {
-//       console.log(data[i]);
-//     }
-//   }
-// }
+const showAvailableHotels = document.querySelector('.main__container--free');
+const btnClick = document.querySelector('.header__button');
+
+btnClick.addEventListener('click', () => {
+  if (showAvailableHotels.style.display === 'none') {
+    showAvailableHotels.style.display = 'block';
+  } else {
+    showAvailableHotels.style.display = 'block';
+  }
+});

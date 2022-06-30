@@ -496,8 +496,12 @@ h2::after {
   max-width: 1440px;
 }
 
-.main__homes,
 .main__free{
+  background-color: #eaf0f9;
+  min-height: 300px;
+}
+
+.main__homes{
   background-color: #eaf0f9;
   min-height: 828px;
 }
