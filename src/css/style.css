@@ -479,23 +479,27 @@ h2::after {
   width: 100%;
 }
 
-.main__container--homes {
+.main__container--homes,
+.main__container--free{
   max-width: 1440px;
 }
 
-.main__homes {
+.main__homes,
+.main__free{
   background-color: #eaf0f9;
   min-height: 828px;
 }
 
-.main__homes--hotel {
+.main__homes--hotel,
+.main__free--hotel{
   display: flex;
   align-items: flex-start;
   flex-flow: row wrap;
   justify-content: center;
 }
 
-.main__homes--element {
+.main__homes--element,
+.main__free--element{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -522,7 +526,6 @@ h2::after {
   color: #bfbfbf;
   padding-top: 24px;
   width: 295px;
-
 }
 
 .main__homes--element:nth-child(8){
@@ -1046,7 +1049,8 @@ h2::after {
     font-size: 19px;
   }
 
-  .main__homes {
+  .main__homes,
+  .main__free{
     height: 690px;
   }
 
@@ -1264,7 +1268,8 @@ h2::after {
     margin-top: 25px;
   }
 
-  .main__homes {
+  .main__homes,
+  .main__free{
     height: 870px;
   }
 
@@ -1413,7 +1418,8 @@ h2::after {
 }
 
 @media screen and (max-width: 600px) {
-  .main__homes {
+  .main__homes,
+  .main__free{
     height: 700px;
   }
 
@@ -1459,7 +1465,8 @@ h2::after {
 }
 
 @media screen and (max-width: 500px) {
-  .main__homes {
+  .main__homes,
+  .maim__free{
     height: 570px;
   }
 
@@ -1722,7 +1729,8 @@ h2::after {
     width: 70px;
   }
 
-  .main__homes {
+  .main__homes,
+  .maim__free{
     background-color: #eaf0f9;
     height: 354px;
   }
