@@ -23,6 +23,7 @@ async function clickSearch() {
     const hasHotel = strForSearch === item.name.toLowerCase();
 
     if (hasCountry || hasCity || hasHotel) {
+      document.querySelector('.main__container--free').style.display = 'block';
       const figure = document.createElement('figure');
       figure.className = 'main__free--element';
       figure.setAttribute('id', item.id);
@@ -50,18 +51,22 @@ async function clickSearch() {
       countryName.innerHTML = `${item.city}  ${item.country}`;
       figcaption.appendChild(countryName);
     }
+    if (strForSearch === '') {
+      document.querySelector('.main__container--free').style.display = 'block';
+      document.querySelector('.free__error').style.display = 'block';
+    }
   });
 }
 
 document.querySelector('.header__button').onclick = clickSearch;
-
-const showAvailableHotels = document.querySelector('.main__container--free');
-const btnClick = document.querySelector('.header__button');
-
-btnClick.addEventListener('click', () => {
-  if (showAvailableHotels.style.display === 'none') {
-    showAvailableHotels.style.display = 'block';
-  } else {
-    showAvailableHotels.style.display = 'block';
-  }
-});
+//
+// const showAvailableHotels = document.querySelector('.main__container--free');
+// const btnClick = document.querySelector('.header__button');
+//
+// btnClick.addEventListener('click', () => {
+//   if (showAvailableHotels.style.display === 'none') {
+//     showAvailableHotels.style.display = 'block';
+//   } else {
+//     showAvailableHotels.style.display = 'block';
+//   }
+// });

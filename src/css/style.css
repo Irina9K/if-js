@@ -491,6 +491,29 @@ h2::after {
   display: none;
 }
 
+.free__error{
+  display: none;
+  position: relative;
+  background-color: #F3F3F4;
+  border: 8px solid red;
+  width:1220px;
+  height:200px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.error__text{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+
+  margin:0 auto;
+  font-size: 34px;
+  color:#3077C6;
+font-weight: bold;
+}
+
 .main__container--homes,
 .main__container--free{
   max-width: 1440px;
