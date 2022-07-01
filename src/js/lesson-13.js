@@ -17,13 +17,34 @@ async function clickSearch() {
   const strForSearch = document.querySelector('.header__choice--city').value.trim().toLowerCase();
   const searchResult = await getPlaces(strForSearch);
 
+  if (strForSearch) {
+    const wrapperElements = document.querySelector('.main__free--hotel');
+
+    while (wrapperElements.firstChild) {
+      wrapperElements.removeChild(wrapperElements.firstChild);
+    }
+  }
+
   searchResult.forEach((item) => {
     const hasCountry = strForSearch === item.country.toLowerCase();
     const hasCity = strForSearch === item.city.toLowerCase();
     const hasHotel = strForSearch === item.name.toLowerCase();
 
+    // const hasNotCountry = strForSearch != item.country.toLowerCase();
+    // const hasNotCity = strForSearch != item.city.toLowerCase();
+    // const hasNotHotel = strForSearch != item.name.toLowerCase();
+    //
+    // const errorBlock = document.querySelector('.free__error');
+    //
+    // if (!hasNotCity && !hasNotCountry && !hasNotHotel) {
+    //   document.querySelector('.main__container--free').style.display = 'block';
+    //   errorBlock.style.display = 'block';
+    // }
+
     if (hasCountry || hasCity || hasHotel) {
       document.querySelector('.main__container--free').style.display = 'block';
+      // document.querySelector('.free__error').style.display = 'none';
+
       const figure = document.createElement('figure');
       figure.className = 'main__free--element';
       figure.setAttribute('id', item.id);
@@ -51,22 +72,12 @@ async function clickSearch() {
       countryName.innerHTML = `${item.city}  ${item.country}`;
       figcaption.appendChild(countryName);
     }
-    if (strForSearch === '') {
-      document.querySelector('.main__container--free').style.display = 'block';
-      document.querySelector('.free__error').style.display = 'block';
-    }
   });
+
+  if (strForSearch === '') {
+    document.querySelector('.main__container--free').style.display = 'block';
+    document.querySelector('.free__error').style.display = 'block';
+  }
 }
 
 document.querySelector('.header__button').onclick = clickSearch;
-//
-// const showAvailableHotels = document.querySelector('.main__container--free');
-// const btnClick = document.querySelector('.header__button');
-//
-// btnClick.addEventListener('click', () => {
-//   if (showAvailableHotels.style.display === 'none') {
-//     showAvailableHotels.style.display = 'block';
-//   } else {
-//     showAvailableHotels.style.display = 'block';
-//   }
-// });
