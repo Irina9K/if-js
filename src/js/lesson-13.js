@@ -24,6 +24,15 @@ async function clickSearch() {
       wrapperElements.removeChild(wrapperElements.firstChild);
     }
   }
+  if (strForSearch === '') {
+    const wrapperElements = document.querySelector('.main__free--hotel');
+
+    while (wrapperElements.firstChild) {
+      wrapperElements.removeChild(wrapperElements.firstChild);
+    }
+    document.querySelector('.main__container--free').style.display = 'block';
+    document.querySelector('.free__error').style.display = 'block';
+  }
 
   searchResult.forEach((item) => {
     const hasCountry = strForSearch === item.country.toLowerCase();
@@ -73,11 +82,6 @@ async function clickSearch() {
       figcaption.appendChild(countryName);
     }
   });
-
-  if (strForSearch === '') {
-    document.querySelector('.main__container--free').style.display = 'block';
-    document.querySelector('.free__error').style.display = 'block';
-  }
 }
 
 document.querySelector('.header__button').onclick = clickSearch;
