@@ -478,34 +478,83 @@ h2::after {
 .col-12 {
   width: 100%;
 }
+.row__free {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /*flex-wrap: wrap;*/
+  /*justify-content: center;*/
+  /*margin: 0 -8px;*/
+}
 
-.main__container--homes {
+.main__container--free{
+  display: none;
+}
+
+.free__error{
+  position: relative;
+  background-color: #F3F3F4;
+  border: 8px solid red;
+  width:1220px;
+  height:200px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.error__text{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%);
+
+  margin:0 auto;
+  font-size: 34px;
+  color:#3077C6;
+font-weight: bold;
+}
+
+.main__container--homes,
+.main__container--free{
   max-width: 1440px;
 }
 
-.main__homes {
+.main__free{
+  background-color: #eaf0f9;
+  min-height: 300px;
+}
+
+.main__homes{
   background-color: #eaf0f9;
   min-height: 828px;
 }
 
-.main__homes--hotel {
+.main__homes--hotel,
+.main__free--hotel{
   display: flex;
   align-items: flex-start;
   flex-flow: row wrap;
   justify-content: center;
 }
 
-.main__homes--element {
+.main__homes--element,
+.main__free--element{
   display: flex;
   flex-direction: column;
   justify-content: center;
   /*width: calc(25% - 26px);*/
   margin: 8px;
 }
+.main__free--element{
+  margin: 0 70px;
+}
 
 .nav__link--country {
   color: #3077c6;
   text-decoration: none;
+}
+
+.main__free--element .main__name--img{
+  font-size: 30px;
 }
 
 .main__name--img
@@ -522,7 +571,10 @@ h2::after {
   color: #bfbfbf;
   padding-top: 24px;
   width: 295px;
+}
 
+.main__free--element{
+  padding-bottom: 70px;
 }
 
 .main__homes--element:nth-child(8){
@@ -1046,7 +1098,8 @@ h2::after {
     font-size: 19px;
   }
 
-  .main__homes {
+  .main__homes,
+  .main__free{
     height: 690px;
   }
 
@@ -1264,7 +1317,8 @@ h2::after {
     margin-top: 25px;
   }
 
-  .main__homes {
+  .main__homes,
+  .main__free{
     height: 870px;
   }
 
@@ -1413,7 +1467,8 @@ h2::after {
 }
 
 @media screen and (max-width: 600px) {
-  .main__homes {
+  .main__homes,
+  .main__free{
     height: 700px;
   }
 
@@ -1459,7 +1514,8 @@ h2::after {
 }
 
 @media screen and (max-width: 500px) {
-  .main__homes {
+  .main__homes,
+  .maim__free{
     height: 570px;
   }
 
@@ -1722,7 +1778,8 @@ h2::after {
     width: 70px;
   }
 
-  .main__homes {
+  .main__homes,
+  .maim__free{
     background-color: #eaf0f9;
     height: 354px;
   }

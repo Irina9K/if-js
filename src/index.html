@@ -83,7 +83,6 @@
                   type="text"
                   id="datain"
                   name="data"
-                  required
                 />
                 <label class="input__group--label label__data" for="datain"
                   >Check-in <span>date</span>
@@ -98,7 +97,6 @@
                   type="text"
                   id="dataout"
                   name="data"
-                  required
                 />
                 <label class="input__group--label label__data" for="dataout">
                   Check-out <span>date</span>
@@ -147,7 +145,7 @@
             </div>
 
             <div class="container__forms--button">
-              <button class="btn header__button">Search</button>
+              <button class="btn header__button" type="reset">Search</button>
             </div>
           </form>
 
@@ -164,6 +162,19 @@
     </header>
 
     <main class="main">
+      <div class="container main__container--free">
+        <section class="main__free">
+          <div class="row__free">
+            <div class="main__title title_free">
+              <h2>Available hotels</h2>
+            </div>
+            <div class="main__free--hotel">
+
+            </div>
+          </div>
+        </section>
+      </div>
+
       <div class="container main__container--offer">
         <section class="main__offer">
           <div class="row">
@@ -574,8 +585,9 @@
         <p class="footer__copyright">&#169; 2020 Triphouse, Inc. All rights reserved</p>
       </div>
     </footer>
-<!--    <script src="js/index.js"></script>-->
+    <!--    <script src="js/index.js"></script>-->
     <script src="js/lesson-11.js"></script>
     <script src="js/lesson-12.js"></script>
+    <script src="js/lesson-13.js"></script>
   </body>
 </html>

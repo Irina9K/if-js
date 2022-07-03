@@ -7,7 +7,7 @@ module.exports = {
   extends: ['airbnb-base', 'plugin:jest/recommended', 'jest-enzyme'],
   plugins: ['babel', 'import', 'react'],
   parserOptions: {
-    ecmaVersion: 6,
+    ecmaVersion: 8,
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
