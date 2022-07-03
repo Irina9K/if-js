@@ -492,7 +492,6 @@ h2::after {
 }
 
 .free__error{
-  display: none;
   position: relative;
   background-color: #F3F3F4;
   border: 8px solid red;
