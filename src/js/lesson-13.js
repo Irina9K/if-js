@@ -4,6 +4,26 @@ const elementFree = startShow.lastElementChild.lastElementChild;
 const API_URL = 'https://fe-student-api.herokuapp.com/api';
 const PATH_FOR_HOTELS = 'hotels?search';
 
+function removeChildren() {
+  const wrapperElements = document.querySelector('.main__free--hotel');
+
+  while (wrapperElements.firstChild) {
+    wrapperElements.removeChild(wrapperElements.firstChild);
+  }
+}
+
+function createBlockError() {
+  document.querySelector('.main__container--free').style.display = 'block';
+  const divError = document.createElement('div');
+  divError.className = 'free__error';
+  elementFree.appendChild(divError);
+
+  const pError = document.createElement('p');
+  pError.className = 'error__text';
+  pError.textContent = 'Please enter destination or hotel name.';
+  divError.appendChild(pError);
+}
+
 async function getPlaces(searchString) {
   const response = await fetch(`${API_URL}/${PATH_FOR_HOTELS}=${searchString}`);
   const result = await response.json();
@@ -15,40 +35,19 @@ getPlaces();
 async function clickSearch() {
   const strForSearch = document.querySelector('.header__choice--city').value.trim().toLowerCase();
   const searchResult = await getPlaces(strForSearch);
-  const wrapperElements = document.querySelector('.main__free--hotel');
 
   if (strForSearch) {
-    while (wrapperElements.firstChild) {
-      wrapperElements.removeChild(wrapperElements.firstChild);
-    }
+    removeChildren();
   }
 
   if (strForSearch === '') {
-    while (wrapperElements.firstChild) {
-      wrapperElements.removeChild(wrapperElements.firstChild);
-    }
-    document.querySelector('.main__container--free').style.display = 'block';
-    const divError = document.createElement('div');
-    divError.className = 'free__error';
-    elementFree.appendChild(divError);
-
-    const pError = document.createElement('p');
-    pError.className = 'error__text';
-    pError.textContent = 'Please enter destination or hotel name.';
-    divError.appendChild(pError);
+    removeChildren();
+    createBlockError();
     return;
   }
 
   if (searchResult.length === 0) {
-    document.querySelector('.main__container--free').style.display = 'block';
-    const divError = document.createElement('div');
-    divError.className = 'free__error';
-    elementFree.appendChild(divError);
-
-    const pError = document.createElement('p');
-    pError.className = 'error__text';
-    pError.textContent = 'Please enter destination or hotel name.';
-    divError.appendChild(pError);
+    createBlockError();
     return;
   }
 
