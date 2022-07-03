@@ -30,8 +30,6 @@ async function getPlaces(searchString) {
   return result;
 }
 
-getPlaces();
-
 async function clickSearch() {
   const strForSearch = document.querySelector('.header__choice--city').value.trim().toLowerCase();
   const searchResult = await getPlaces(strForSearch);
