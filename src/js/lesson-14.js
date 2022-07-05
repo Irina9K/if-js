@@ -13,7 +13,6 @@ async function getPopularHotels() {
 
 async function showInfScreen() {
   const hotels = await getPopularHotels();
-  console.log(hotels);
   hotels.forEach((item) => {
     const figure = document.createElement('figure');
     figure.className = 'main__homes--element';
@@ -46,41 +45,39 @@ async function showInfScreen() {
 }
 
 function sessionRecord() {
-  if (sessionStorage.getItem('key') !== null) {
-    const session = JSON.parse(sessionStorage.getItem('key'));
-    session.forEach((item) => {
-      const figure = document.createElement('figure');
-      figure.className = 'main__homes--element';
-      figure.setAttribute('id', item.id);
-      elementHomes.appendChild(figure);
-
-      const img = document.createElement('img');
-      img.setAttribute('src', item.imageUrl);
-      img.style.width = `${296}px`;
-      img.style.height = `${296}px`;
-      figure.appendChild(img);
-
-      const figcaption = document.createElement('figcaption');
-      figcaption.className = 'main__name--img';
-      figure.appendChild(figcaption);
-
-      const hotelName = document.createElement('a');
-      hotelName.setAttribute('href', '#');
-      hotelName.className = 'nav__link--country';
-      hotelName.innerHTML = item.name;
-      figcaption.appendChild(hotelName);
-
-      const countryName = document.createElement('a');
-      countryName.setAttribute('href', '#');
-      countryName.className = 'main__name--country';
-      countryName.innerHTML = `${item.city}  ${item.country}`;
-      figcaption.append(countryName);
-    });
-    console.log('hi');
+  if (sessionStorage.getItem('key') === null) {
+    showInfScreen();
     return;
   }
-  showInfScreen();
-  console.log('bye');
+  const session = JSON.parse(sessionStorage.getItem('key'));
+  session.forEach((item) => {
+    const figure = document.createElement('figure');
+    figure.className = 'main__homes--element';
+    figure.setAttribute('id', item.id);
+    elementHomes.appendChild(figure);
+
+    const img = document.createElement('img');
+    img.setAttribute('src', item.imageUrl);
+    img.style.width = `${296}px`;
+    img.style.height = `${296}px`;
+    figure.appendChild(img);
+
+    const figcaption = document.createElement('figcaption');
+    figcaption.className = 'main__name--img';
+    figure.appendChild(figcaption);
+
+    const hotelName = document.createElement('a');
+    hotelName.setAttribute('href', '#');
+    hotelName.className = 'nav__link--country';
+    hotelName.innerHTML = item.name;
+    figcaption.appendChild(hotelName);
+
+    const countryName = document.createElement('a');
+    countryName.setAttribute('href', '#');
+    countryName.className = 'main__name--country';
+    countryName.innerHTML = `${item.city}  ${item.country}`;
+    figcaption.append(countryName);
+  });
 }
 
 sessionRecord();
