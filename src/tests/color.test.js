@@ -3,7 +3,7 @@ document.body.innerHTML = `
   <p id="text2">Text 2</p>
   <p id="text3">Text 3</p>`;
 
-const changeColor = require('../js/lesson-4');
+const changeColor = require('../js/lesson-4.js');
 
 describe('check color', () => {
   const element1 = document.getElementById('text1');

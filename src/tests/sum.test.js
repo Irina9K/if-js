@@ -1,4 +1,4 @@
-const sum = require('../js/main');
+const sum = require('../js/main.js');
 
 test('sum', () => {
   expect(sum(1)(2)).toEqual(3);
