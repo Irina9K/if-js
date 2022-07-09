@@ -1,8 +1,7 @@
+import { API_URL, PATH_FOR_HOTELS } from './api.js';
+
 const startShow = document.querySelector('.main__free');
 const elementFree = startShow.lastElementChild.lastElementChild;
-
-const API_URL = 'https://fe-student-api.herokuapp.com/api';
-const PATH_FOR_HOTELS = 'hotels?search';
 
 function removeChildren() {
   const wrapperElements = document.querySelector('.main__free--hotel');

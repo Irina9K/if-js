@@ -1,8 +1,7 @@
+import { API_URL, PATH_FOR_HOTELS_POPULAR } from './api.js';
+
 const start = document.querySelector('.main__homes');
 const elementHomes = start.lastElementChild.lastElementChild;
-
-const API_URL = 'https://fe-student-api.herokuapp.com/api';
-const PATH_FOR_HOTELS_POPULAR = 'hotels/popular';
 
 async function getPopularHotels() {
   const response = await fetch(`${API_URL}/${PATH_FOR_HOTELS_POPULAR}`);
