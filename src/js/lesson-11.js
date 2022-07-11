@@ -12,6 +12,17 @@ formPeopleRoom.addEventListener('click', () => {
   }
 });
 
+const showInf = document.querySelector('.wrapper__children--inf');
+const addInf = document.querySelector('.fifteen');
+
+addInf.addEventListener('click', () => {
+  if (showInf.style.display === 'none') {
+    showInf.style.display = 'block';
+  } else {
+    showInf.style.display = 'block';
+  }
+});
+
 const select = document.createElement('select');
 select.style.width = `${99}px'`;
 select.style.height = `${30}px`;
@@ -80,7 +91,6 @@ function countThings(count) {
       const divQuestions = document.querySelector('.wrapper__select');
       const newSelect = select.cloneNode(true);
       divQuestions.appendChild(newSelect);
-      // input.value = `${counter} Children`;
       children.innerHTML = `— ${counter} Children `;
     }
   });
@@ -138,14 +148,3 @@ function countThings(count) {
 
 const counts = document.querySelectorAll('.filter__item');
 counts.forEach(countThings);
-
-const showInf = document.querySelector('.wrapper__children--inf');
-const addInf = document.querySelector('.fifteen');
-
-addInf.addEventListener('click', () => {
-  if (showInf.style.display === 'none') {
-    showInf.style.display = 'block';
-  } else {
-    showInf.style.display = 'block';
-  }
-});

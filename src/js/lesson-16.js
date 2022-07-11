@@ -14,6 +14,16 @@ async function clickSearchAll() {
   const adultsNumber = document.querySelector('.add__first').textContent.split(' ')[0];
   const roomsNumber = document.querySelector('.add__third').textContent.split(' ')[1];
   const wrapperSelect = document.querySelector('.wrapper__select').children.length;
+  const childrenNumber = document.querySelector('.add__second').textContent.split(' ')[1];
+  // console.log(typeof adultsNumber);
+  // console.log(typeof childrenNumber);
+  // console.log(adultsNumber);
+  // console.log(childrenNumber);
+  if ((adultsNumber === '' || adultsNumber === '0') && +childrenNumber >= 1) {
+    const errorText = 'Children cannot ride without adults';
+    console.log(errorText);
+    return;
+  }
 
   if (wrapperSelect === 1) {
     const yearOld = document.querySelector('select').value.split(' ')[0];
