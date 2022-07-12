@@ -30,14 +30,14 @@ async function getPlaces(searchString) {
 }
 
 async function clickSearch() {
-  const strForSearch = document.querySelector('.header__choice--city').value.trim().toLowerCase();
-  const searchResult = await getPlaces(strForSearch);
+  const searchPlace = document.querySelector('.header__choice--city').value.trim().toLowerCase();
+  const searchResult = await getPlaces(searchPlace);
 
-  if (strForSearch) {
+  if (searchPlace) {
     removeChildren();
   }
 
-  if (strForSearch === '') {
+  if (searchPlace === '') {
     removeChildren();
     createBlockError();
     return;

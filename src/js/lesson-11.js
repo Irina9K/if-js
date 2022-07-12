@@ -1,5 +1,14 @@
 const formPeopleRoom = document.getElementById('people-room');
 const filterContent = document.querySelector('.container__forms--filter');
+const windowClick = document.querySelector('.header__button');
+
+windowClick.addEventListener('click', () => {
+  if (filterContent.style.display === 'block') {
+    filterContent.style.display = 'none';
+  } else {
+    filterContent.style.display = 'none';
+  }
+});
 
 formPeopleRoom.addEventListener('click', () => {
   if (filterContent.style.display === 'none' || '') {
