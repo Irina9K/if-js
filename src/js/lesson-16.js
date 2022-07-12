@@ -104,8 +104,7 @@ async function clickSearchAll() {
 
   if (wrapperSelect === 1) {
     const yearOld = document.querySelector('select').value.split(' ')[0];
-    const searchPlaceResult = await getRequest(searchPlace, adultsNumber, yearOld, roomsNumber);
-    console.log(searchPlaceResult);
+    const searchPlaceResult = await getRequest(searchPlace, adultsNumber, yearOld, roomsNumber)
     showAvailableHotels(searchPlace, searchPlaceResult);
     return;
   }
