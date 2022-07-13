@@ -5,8 +5,6 @@ const hiddenFilter = document.querySelector('.header__button');
 hiddenFilter.addEventListener('click', () => {
   if (filterContent.style.display === 'block') {
     filterContent.style.display = 'none';
-  } else {
-    filterContent.style.display = 'none';
   }
 });
 
@@ -25,11 +23,7 @@ const showInf = document.querySelector('.wrapper__children--inf');
 const addInf = document.querySelector('.fifteen');
 
 addInf.addEventListener('click', () => {
-  if (showInf.style.display === 'none') {
-    showInf.style.display = 'block';
-  } else {
-    showInf.style.display = 'block';
-  }
+  showInf.style.display = 'block';
 });
 
 const select = document.createElement('select');
