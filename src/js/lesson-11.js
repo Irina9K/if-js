@@ -1,5 +1,12 @@
 const formPeopleRoom = document.getElementById('people-room');
 const filterContent = document.querySelector('.container__forms--filter');
+const hiddenFilter = document.querySelector('.header__button');
+
+hiddenFilter.addEventListener('click', () => {
+  if (filterContent.style.display === 'block') {
+    filterContent.style.display = 'none';
+  }
+});
 
 formPeopleRoom.addEventListener('click', () => {
   if (filterContent.style.display === 'none' || '') {
@@ -10,6 +17,13 @@ formPeopleRoom.addEventListener('click', () => {
   } else {
     filterContent.style.display = 'block';
   }
+});
+
+const showInf = document.querySelector('.wrapper__children--inf');
+const addInf = document.querySelector('.fifteen');
+
+addInf.addEventListener('click', () => {
+  showInf.style.display = 'block';
 });
 
 const select = document.createElement('select');
@@ -80,7 +94,6 @@ function countThings(count) {
       const divQuestions = document.querySelector('.wrapper__select');
       const newSelect = select.cloneNode(true);
       divQuestions.appendChild(newSelect);
-      // input.value = `${counter} Children`;
       children.innerHTML = `— ${counter} Children `;
     }
   });
@@ -138,14 +151,3 @@ function countThings(count) {
 
 const counts = document.querySelectorAll('.filter__item');
 counts.forEach(countThings);
-
-const showInf = document.querySelector('.wrapper__children--inf');
-const addInf = document.querySelector('.fifteen');
-
-addInf.addEventListener('click', () => {
-  if (showInf.style.display === 'none') {
-    showInf.style.display = 'block';
-  } else {
-    showInf.style.display = 'block';
-  }
-});

@@ -6,12 +6,26 @@ const elementHomes = start.lastElementChild.lastElementChild;
 async function getPopularHotels() {
   const response = await fetch(`${API_URL}/${PATH_FOR_HOTELS_POPULAR}`);
   const result = await response.json();
+  function bubbleSort() {
+    for (let i = 0, endI = result.length - 1; i < endI; i += 1) {
+      for (let j = 0, endJ = endI - i; j < endJ; j += 1) {
+        if (result[j].name > result[j + 1].name) {
+          const swap = result[j].name;
+          result[j].name = result[j + 1].name;
+          result[j + 1].name = swap;
+        }
+      }
+    }
+    return result;
+  }
+  bubbleSort(result);
   sessionStorage.setItem('key', 'result');
   return result;
 }
 
 async function showInfScreen() {
   const hotels = await getPopularHotels();
+
   hotels.forEach((item) => {
     const figure = document.createElement('figure');
     figure.className = 'main__homes--element';
