@@ -1,4 +1,4 @@
-import { API_URL, PATH_FOR_HOTELS } from './api.js';
+import { API_URL, PATH_FOR_HOTELS } from '../modules/api.js';
 
 const startShow = document.querySelector('.main__free');
 const elementFree = startShow.lastElementChild.lastElementChild;

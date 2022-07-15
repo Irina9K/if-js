@@ -1,28 +1,5 @@
 import { API_URL, PATH_FOR_HOTELS } from './api.js';
-
-const startShow = document.querySelector('.main__free');
-const elementFree = startShow.lastElementChild.lastElementChild;
-
-function removeChildren() {
-  const wrapperElements = document.querySelector('.main__free--hotel');
-
-  while (wrapperElements.firstChild) {
-    wrapperElements.removeChild(wrapperElements.firstChild);
-  }
-}
-
-function createBlockError(errorInf) {
-  document.querySelector('.main__container--free').style.display = 'block';
-  const divError = document.createElement('div');
-  divError.className = 'free__error';
-  elementFree.appendChild(divError);
-
-  const pError = document.createElement('p');
-  pError.className = 'error__text';
-  // pError.textContent = 'Please enter destination or hotel name.';
-  pError.textContent = errorInf;
-  divError.appendChild(pError);
-}
+import { createBlockError, removeChildren, elementFree } from './functions.js';
 
 function showAvailableHotels(searchPlace, searchPlaceResult) {
   if (searchPlace) {
@@ -125,3 +102,5 @@ async function clickSearchAll() {
 }
 
 document.querySelector('.header__button').onclick = clickSearchAll;
+
+export { getRequest, clickSearchAll };
