@@ -101,6 +101,4 @@ async function clickSearchAll() {
   }
 }
 
-document.querySelector('.header__button').onclick = clickSearchAll;
-
-export { getRequest, clickSearchAll };
+export { clickSearchAll };

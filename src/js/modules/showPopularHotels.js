@@ -92,4 +92,4 @@ function sessionRecord() {
     figcaption.append(countryName);
   });
 }
-export { getPopularHotels, showInfScreen, sessionRecord };
+export { sessionRecord };

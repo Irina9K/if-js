@@ -1,13 +1,10 @@
 import { createSelect, countThings } from './modules/functions.js';
-import { getPopularHotels, showInfScreen, sessionRecord } from './modules/showPopularHotels.js';
-import { getRequest, clickSearchAll } from './modules/showAvailableHotels.js';
+import { sessionRecord } from './modules/showPopularHotels.js';
+import { clickSearchAll } from './modules/showAvailableHotels.js';
 
-getPopularHotels();
-showInfScreen();
 sessionRecord();
 
-getRequest();
-clickSearchAll();
+document.querySelector('.header__button').onclick = clickSearchAll;
 
 const formPeopleRoom = document.getElementById('people-room');
 const filterContent = document.querySelector('.container__forms--filter');
