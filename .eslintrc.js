@@ -16,18 +16,18 @@ module.exports = {
 
   rules: {
     'no-console': 'off',
-    'max-len': ['error', { ignoreComments: true, code: 120 }],
+    'max-len': ['error', { ignoreComments: true, code: 160 }],
     'import/prefer-default-export': 'off',
-    "import/extensions": [
-      "error",
-      "ignorePackages",
+    'import/extensions': [
+      'error',
+      'ignorePackages',
       {
-        "": "never",
-        "js": "always",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
-      }
+        '': 'never',
+        js: 'always',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
     ],
     'no-param-reassign': 0,
     'operator-linebreak': [
@@ -41,6 +41,5 @@ module.exports = {
     ],
 
     'max-classes-per-file': ['error', { ignoreExpressions: true, max: 5 }],
-
   },
 };

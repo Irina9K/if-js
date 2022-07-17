@@ -49,9 +49,9 @@ function showAvailableHotels(searchPlace, searchPlaceResult) {
   });
 }
 
-async function getRequest(searchPlace, adultsNumber, yearOld, roomsNumber) {
+async function getRequest(searchPlace, dateFrom, dateTo, adultsNumber, yearOld, roomsNumber) {
   const response = await fetch(
-    `${API_URL}/${PATH_FOR_HOTELS}=${searchPlace}&adults=${adultsNumber}&children=${yearOld}&rooms=${roomsNumber}`,
+    `${API_URL}/${PATH_FOR_HOTELS}=${searchPlace}&dateFrom=${dateFrom}&dateTo${dateTo}&adults=${adultsNumber}&children=${yearOld}&rooms=${roomsNumber}`,
   );
   const result = await response.json();
   console.log(response);
@@ -64,6 +64,10 @@ async function clickSearchAll() {
   const roomsNumber = document.querySelector('.add__third').textContent.split(' ')[1];
   const wrapperSelect = document.querySelector('.wrapper__select').children.length;
   const childrenNumber = document.querySelector('.add__second').textContent.split(' ')[1];
+  const dateFrom = Date.now(document.getElementById('datain').value);
+  const dateTo = Date.now(document.getElementById('dataout').value);
+  console.log(dateFrom);
+  console.log(dateTo);
 
   if (!searchPlace && !adultsNumber && roomsNumber === undefined) {
     removeChildren();
@@ -81,13 +85,27 @@ async function clickSearchAll() {
 
   if (+wrapperSelect === 0) {
     const yearOld = '';
-    const searchPlaceResult = await getRequest(searchPlace, adultsNumber, yearOld, roomsNumber);
+    const searchPlaceResult = await getRequest(
+      searchPlace,
+      dateFrom,
+      dateTo,
+      adultsNumber,
+      yearOld,
+      roomsNumber,
+    );
     showAvailableHotels(searchPlace, searchPlaceResult);
   }
 
   if (wrapperSelect === 1) {
     const yearOld = document.querySelector('select').value.split(' ')[0];
-    const searchPlaceResult = await getRequest(searchPlace, adultsNumber, yearOld, roomsNumber);
+    const searchPlaceResult = await getRequest(
+      searchPlace,
+      dateFrom,
+      dateTo,
+      adultsNumber,
+      yearOld,
+      roomsNumber,
+    );
     showAvailableHotels(searchPlace, searchPlaceResult);
     return;
   }
@@ -102,7 +120,14 @@ async function clickSearchAll() {
       return yearOld;
     });
 
-    const searchPlaceResult = await getRequest(searchPlace, adultsNumber, yearOld, roomsNumber);
+    const searchPlaceResult = await getRequest(
+      searchPlace,
+      dateFrom,
+      dateTo,
+      adultsNumber,
+      yearOld,
+      roomsNumber,
+    );
     showAvailableHotels(searchPlace, searchPlaceResult);
   }
 }
