@@ -79,6 +79,12 @@ async function clickSearchAll() {
     return;
   }
 
+  if (+wrapperSelect === 0) {
+    const yearOld = '';
+    const searchPlaceResult = await getRequest(searchPlace, adultsNumber, yearOld, roomsNumber);
+    showAvailableHotels(searchPlace, searchPlaceResult);
+  }
+
   if (wrapperSelect === 1) {
     const yearOld = document.querySelector('select').value.split(' ')[0];
     const searchPlaceResult = await getRequest(searchPlace, adultsNumber, yearOld, roomsNumber);
