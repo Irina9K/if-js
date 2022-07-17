@@ -66,8 +66,6 @@ async function clickSearchAll() {
   const childrenNumber = document.querySelector('.add__second').textContent.split(' ')[1];
   const dateFrom = Date.now(document.getElementById('datain').value);
   const dateTo = Date.now(document.getElementById('dataout').value);
-  console.log(dateFrom);
-  console.log(dateTo);
 
   if (!searchPlace && !adultsNumber && roomsNumber === undefined) {
     removeChildren();
