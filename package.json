@@ -2,7 +2,7 @@
   "name": "if",
   "version": "1.0.0",
   "description": "",
-  "main": "src/js/main.js",
+  "main": "src/js/homeworks/first_task.js",
   "scripts": {
     "test": "jest --env=jsdom",
     "prettier": "prettier --write src/**/*.js",

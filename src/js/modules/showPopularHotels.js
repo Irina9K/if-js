@@ -92,5 +92,4 @@ function sessionRecord() {
     figcaption.append(countryName);
   });
 }
-
-sessionRecord();
+export { sessionRecord };

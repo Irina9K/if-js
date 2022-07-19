@@ -1,28 +1,5 @@
 import { API_URL, PATH_FOR_HOTELS } from './api.js';
-
-const startShow = document.querySelector('.main__free');
-const elementFree = startShow.lastElementChild.lastElementChild;
-
-function removeChildren() {
-  const wrapperElements = document.querySelector('.main__free--hotel');
-
-  while (wrapperElements.firstChild) {
-    wrapperElements.removeChild(wrapperElements.firstChild);
-  }
-}
-
-function createBlockError(errorInf) {
-  document.querySelector('.main__container--free').style.display = 'block';
-  const divError = document.createElement('div');
-  divError.className = 'free__error';
-  elementFree.appendChild(divError);
-
-  const pError = document.createElement('p');
-  pError.className = 'error__text';
-  // pError.textContent = 'Please enter destination or hotel name.';
-  pError.textContent = errorInf;
-  divError.appendChild(pError);
-}
+import { createBlockError, removeChildren, elementFree } from './functions.js';
 
 function showAvailableHotels(searchPlace, searchPlaceResult) {
   if (searchPlace) {
@@ -72,9 +49,9 @@ function showAvailableHotels(searchPlace, searchPlaceResult) {
   });
 }
 
-async function getRequest(searchPlace, adultsNumber, yearOld, roomsNumber) {
+async function getRequest(searchPlace, dateFrom, dateTo, adultsNumber, yearOld, roomsNumber) {
   const response = await fetch(
-    `${API_URL}/${PATH_FOR_HOTELS}=${searchPlace}&adults=${adultsNumber}&children=${yearOld}&rooms=${roomsNumber}`,
+    `${API_URL}/${PATH_FOR_HOTELS}=${searchPlace}&dateFrom=${dateFrom}&dateTo${dateTo}&adults=${adultsNumber}&children=${yearOld}&rooms=${roomsNumber}`,
   );
   const result = await response.json();
   console.log(response);
@@ -87,6 +64,8 @@ async function clickSearchAll() {
   const roomsNumber = document.querySelector('.add__third').textContent.split(' ')[1];
   const wrapperSelect = document.querySelector('.wrapper__select').children.length;
   const childrenNumber = document.querySelector('.add__second').textContent.split(' ')[1];
+  const dateFrom = Date.now(document.getElementById('datain').value);
+  const dateTo = Date.now(document.getElementById('dataout').value);
 
   if (!searchPlace && !adultsNumber && roomsNumber === undefined) {
     removeChildren();
@@ -102,9 +81,29 @@ async function clickSearchAll() {
     return;
   }
 
+  if (+wrapperSelect === 0) {
+    const yearOld = '';
+    const searchPlaceResult = await getRequest(
+      searchPlace,
+      dateFrom,
+      dateTo,
+      adultsNumber,
+      yearOld,
+      roomsNumber,
+    );
+    showAvailableHotels(searchPlace, searchPlaceResult);
+  }
+
   if (wrapperSelect === 1) {
     const yearOld = document.querySelector('select').value.split(' ')[0];
-    const searchPlaceResult = await getRequest(searchPlace, adultsNumber, yearOld, roomsNumber);
+    const searchPlaceResult = await getRequest(
+      searchPlace,
+      dateFrom,
+      dateTo,
+      adultsNumber,
+      yearOld,
+      roomsNumber,
+    );
     showAvailableHotels(searchPlace, searchPlaceResult);
     return;
   }
@@ -119,9 +118,16 @@ async function clickSearchAll() {
       return yearOld;
     });
 
-    const searchPlaceResult = await getRequest(searchPlace, adultsNumber, yearOld, roomsNumber);
+    const searchPlaceResult = await getRequest(
+      searchPlace,
+      dateFrom,
+      dateTo,
+      adultsNumber,
+      yearOld,
+      roomsNumber,
+    );
     showAvailableHotels(searchPlace, searchPlaceResult);
   }
 }
 
-document.querySelector('.header__button').onclick = clickSearchAll;
+export { clickSearchAll };

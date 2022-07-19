@@ -1,31 +1,3 @@
-const formPeopleRoom = document.getElementById('people-room');
-const filterContent = document.querySelector('.container__forms--filter');
-const hiddenFilter = document.querySelector('.header__button');
-
-hiddenFilter.addEventListener('click', () => {
-  if (filterContent.style.display === 'block') {
-    filterContent.style.display = 'none';
-  }
-});
-
-formPeopleRoom.addEventListener('click', () => {
-  if (filterContent.style.display === 'none' || '') {
-    filterContent.style.display = 'none';
-  }
-  if (filterContent.style.display === 'block') {
-    filterContent.style.display = 'none';
-  } else {
-    filterContent.style.display = 'block';
-  }
-});
-
-const showInf = document.querySelector('.wrapper__children--inf');
-const addInf = document.querySelector('.fifteen');
-
-addInf.addEventListener('click', () => {
-  showInf.style.display = 'block';
-});
-
 const select = document.createElement('select');
 select.style.width = `${99}px'`;
 select.style.height = `${30}px`;
@@ -37,14 +9,6 @@ function createSelect() {
     select.appendChild(option);
   }
 }
-
-createSelect();
-
-const input = document.querySelector('.header__choice--people');
-input.value = '0 Adults — 0 Children — 0 Room';
-input.addEventListener('click', () => {
-  input.value = '';
-});
 
 const adults = document.querySelector('.add__first');
 const children = document.querySelector('.add__second');
@@ -149,5 +113,29 @@ function countThings(count) {
   });
 }
 
-const counts = document.querySelectorAll('.filter__item');
-counts.forEach(countThings);
+function removeChildren() {
+  const wrapperElements = document.querySelector('.main__free--hotel');
+
+  while (wrapperElements.firstChild) {
+    wrapperElements.removeChild(wrapperElements.firstChild);
+  }
+}
+const startShow = document.querySelector('.main__free');
+const elementFree = startShow.lastElementChild.lastElementChild;
+
+function createBlockError(errorInf) {
+  document.querySelector('.main__container--free').style.display = 'block';
+  const divError = document.createElement('div');
+  divError.className = 'free__error';
+  elementFree.appendChild(divError);
+
+  const pError = document.createElement('p');
+  pError.className = 'error__text';
+  // pError.textContent = 'Please enter destination or hotel name.';
+  pError.textContent = errorInf;
+  divError.appendChild(pError);
+}
+
+export {
+  createSelect, countThings, removeChildren, createBlockError, elementFree,
+};
